@@ -1,10 +1,10 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin
 
 
-### ZSH HOME
+# ZSH HOME
 export ZSH=$HOME/.zsh
 
-### HISTORY CONFIG
+# HISTORY CONFIG
 export HISTFILE=$ZSH/.zsh_history
 
 # How many commands zsh will load to memory.
@@ -24,11 +24,14 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 
-# Navigation aliases
+
+### ALIASES ###
+
+# navigation
 alias dev="cd ~/Dev"
 alias repos="cd ~/Dev/_repos"
 
-# git aliases
+# git 
 alias gs="git status"
 
 ga() {
@@ -41,4 +44,6 @@ gm() {
 
 alias gp="git push"
 
+
+# Load Starship prompt
 eval "$(starship init zsh)"
