@@ -39,4 +39,6 @@ gm() {
 	git commit -m "$1"
 }
 
+alias gp="git push"
+
 eval "$(starship init zsh)"
