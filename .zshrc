@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin
 
 
 ### ZSH HOME
@@ -23,3 +23,5 @@ setopt HIST_FIND_NO_DUPS
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
+
+eval "$(starship init zsh)"
