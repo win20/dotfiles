@@ -24,4 +24,19 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 
+# Navigation aliases
+alias dev="cd ~/Dev"
+alias repos="cd ~/Dev/_repos"
+
+# git aliases
+alias gs="git status"
+
+ga() {
+	git add $1
+}
+
+gm() {
+	git commit -m "$1"
+}
+
 eval "$(starship init zsh)"
