@@ -47,3 +47,4 @@ alias gp="git push"
 
 # Load Starship prompt
 eval "$(starship init zsh)"
+

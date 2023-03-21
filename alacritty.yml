@@ -179,11 +179,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-# colors:
+colors:
   # Default colors
-  # primary:
-  #  background: '#ffffff'
-  #  foreground: '#000000'
+  primary:
+    background: '#011627'
+    # foreground: '#000000'
 
     # Bright and dim foreground colors
     #
