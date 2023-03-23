@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin
-
+export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # ZSH HOME
 export ZSH=$HOME/.zsh
@@ -24,6 +24,7 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 
+bindkey -v
 
 ### ALIASES ###
 
@@ -31,7 +32,9 @@ source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 alias dev="cd ~/Dev"
 alias repos="cd ~/Dev/_repos"
 
-# git 
+alias v="nvim"
+
+# git
 alias gs="git status"
 
 ga() {
