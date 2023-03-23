@@ -3,7 +3,6 @@ $username\
 $hostname\
 $directory\
 $python\
-$aws\
 $git_branch\
 $git_commit\
 $git_state\
@@ -14,10 +13,6 @@ $line_break\
 $character"""
 
 add_newline = true
-
-[aws]
-symbol = "🅰 "
-disabled = true
 
 [directory]
 home_symbol = "~"
