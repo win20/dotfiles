@@ -31,11 +31,13 @@ bindkey -v
 # navigation
 alias dev="cd ~/Dev"
 alias repos="cd ~/Dev/_repos"
+alias vconf="cd ~/.config/nvim"
 
 alias v="nvim"
 
 # GIT #
 alias gs="git status"
+alias ga="git add"
 alias gm="git commit"
 alias gp="git push"
 alias gb="git checkout -b"
