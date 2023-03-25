@@ -76,6 +76,9 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+	--	use("theoboldalex/case_manager.nvim")
+
+	use({ "win20/case_manager.nvim", branch = "fix-quotation-marks-being-duplicated" })
 	-- treesitter configuration
 	use({
 		"nvim-treesitter/nvim-treesitter",

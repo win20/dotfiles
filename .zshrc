@@ -34,7 +34,7 @@ alias repos="cd ~/Dev/_repos"
 
 alias v="nvim"
 
-# git
+# GIT #
 alias gs="git status"
 
 ga() {
@@ -46,7 +46,7 @@ gm() {
 }
 
 alias gp="git push"
-
+alias gb="git checkout -b"
 
 # Load Starship prompt
 eval "$(starship init zsh)"

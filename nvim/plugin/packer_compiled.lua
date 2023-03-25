@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
     url = "https://github.com/vim-scripts/ReplaceWithRegister"
   },
+  ["case_manager.nvim"] = {
+    loaded = true,
+    path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/case_manager.nvim",
+    url = "https://github.com/win20/case_manager.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/cmp-buffer",
