@@ -36,15 +36,7 @@ alias v="nvim"
 
 # GIT #
 alias gs="git status"
-
-ga() {
-	git add $1
-}
-
-gm() {
-	git commit -m "$1"
-}
-
+alias gm="git commit"
 alias gp="git push"
 alias gb="git checkout -b"
 
