@@ -42,6 +42,12 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gb="git checkout -b"
 
+# tmux
+alias ksn="tmux kill-ses -t"
+alias ksa="tmux kill-ses -a"
+alias ks="tmux kill-session"
+alias tls="tmux ls"
+
 # Load Starship prompt
 eval "$(starship init zsh)"
 
