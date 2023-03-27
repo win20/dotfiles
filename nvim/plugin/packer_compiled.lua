@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -200,6 +195,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/Users/winbaruapersonal/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

@@ -30,7 +30,7 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	use("shaunsingh/nord.nvim")
+	use("rmehri01/onenord.nvim")
 	use("christoomey/vim-tmux-navigator")
 
 	use("szw/vim-maximizer")
