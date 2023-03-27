@@ -5,6 +5,8 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>s", ":wa<CR>")
 keymap.set("n", "<leader>sq", ":wq<CR>")
 keymap.set("n", "<leader>q", ":q<CR>")
+keymap.set("n", "<leader>k", ":bnext<CR>")
+keymap.set("n", "<leader>j", ":bprev<CR>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
