@@ -1,8 +1,10 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
-
 keymap.set("i", "jk", "<ESC>")
+keymap.set("n", "<leader>s", ":wa<CR>")
+keymap.set("n", "<leader>sq", ":wq<CR>")
+keymap.set("n", "<leader>q", ":q<CR>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
@@ -22,6 +24,14 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- Git fugitive
+keymap.set("n", "<leader>g", ":G<CR>")
+keymap.set("n", "<leader>gaa", ":G add")
+keymap.set("n", "<leader>ga", ":G add .<CR>")
+keymap.set("n", "<leader>gc", ":G commit<CR>")
+keymap.set("n", "<leader>gd", ":G pull<CR>")
+keymap.set("n", "<leader>gu", ":G push<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
