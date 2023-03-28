@@ -19,6 +19,9 @@ require("lualine").setup({
 		theme = nord,
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = { "packer", "NvimTree", "NvimTree_1" },
+		},
 	},
 	sections = {
 		lualine_a = {
