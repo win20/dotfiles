@@ -39,7 +39,8 @@ alias v="nvim"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
-alias gp="git push"
+alias gd="git pull"
+alias gu="git push"
 alias gb="git checkout -b"
 
 # tmux
