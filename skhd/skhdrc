@@ -1,3 +1,9 @@
+cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm 
+cmd + shift - return : open -n -a "Firefox Developer Edition"
+# -------------------
+# -- YABAI HOTKEYS --
+# -------------------
+#
 # change window focus within space
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
@@ -42,7 +48,6 @@ ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
 ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
-
 
 # move window to display left and right
 shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
