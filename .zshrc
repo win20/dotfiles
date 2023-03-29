@@ -27,6 +27,7 @@ source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 bindkey -v
 
 ### ALIASES ###
+alias la='ls -la'
 
 # navigation
 alias dev="cd ~/Dev"
