@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin:/usr/local/bin/tmux
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # ZSH HOME
@@ -43,6 +43,7 @@ alias gc="git commit -m"
 alias gd="git pull"
 alias gu="git push"
 alias gb="git checkout -b"
+alias lg="lazygit"
 
 # tmux
 alias ksn="tmux kill-ses -t"
