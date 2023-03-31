@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin:/usr/local/bin/tmux
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin:/usr/local/bin/tmux:/Applications/CMake.app/Contents/bin
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # ZSH HOME
@@ -28,15 +28,14 @@ bindkey -v
 
 ### ALIASES ###
 alias la='ls -la'
+alias v="nvim"
 
-# navigation
+# Navigation
 alias dev="cd ~/Dev"
 alias repos="cd ~/Dev/_repos"
 alias vconf="cd ~/.config/nvim"
 
-alias v="nvim"
-
-# GIT #
+# Git 
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
@@ -45,12 +44,14 @@ alias gu="git push"
 alias gb="git checkout -b"
 alias lg="lazygit"
 
-# tmux
-alias ksn="tmux kill-ses -t"
-alias ksa="tmux kill-ses -a"
-alias ks="tmux kill-session"
+# Tmux
+alias tkn="tmux kill-ses -t"
+alias tka="tmux kill-ses -a"
+alias tks="tmux kill-session"
 alias tls="tmux ls"
 alias tn="tmux new -s"
+alias ta="tmux attach-session"
+alias tas="tmux attach -t"
 
 # Load Starship prompt
 eval "$(starship init zsh)"
