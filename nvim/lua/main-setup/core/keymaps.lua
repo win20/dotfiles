@@ -32,10 +32,16 @@ keymap.set("n", "<leader>gc", ":G commit<CR>")
 keymap.set("n", "<leader>gd", ":G pull<CR>")
 keymap.set("n", "<leader>gu", ":G push<CR>")
 
--- telescope
+-- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-keymap.set("n", "<leader>b", "<cmd>lua require('telescope.builtin').git_branches()<cr>") -- list available help tags
+keymap.set("n", "<leader>b", "<cmd>lua require('telescope.builtin').git_branches()<cr>") -- list buffers
+keymap.set("n", "<leader>r", "<cmd>lua require('telescope.builtin').oldfiles()<cr>") -- recent files
+keymap.set("n", "<leader>7", "<cmd>lua require('telescope.builtin').treesitter()<cr>") -- recent files
+keymap.set("n", "<leader>1", "<cmd>lua require('telescope.builtin').lsp_references()<cr>") -- list references of word under cursor
+
+-- Trouble
+keymap.set("n", "<leader>2", "<cmd>TroubleToggle<cr>") -- diagnostics
