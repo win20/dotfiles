@@ -1,5 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:$HOME/Dev/nvim-macos/bin:/usr/local/bin/tmux:/Applications/CMake.app/Contents/bin
-export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 
 # ZSH HOME
 export ZSH=$HOME/.zsh
