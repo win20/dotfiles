@@ -44,13 +44,13 @@ alias gb="git checkout -b"
 alias lg="lazygit"
 
 # Tmux
-alias tkn="tmux kill-ses -t"
-alias tka="tmux kill-ses -a"
-alias tks="tmux kill-session"
-alias tls="tmux ls"
-alias tn="tmux new -s"
-alias ta="tmux attach-session"
-alias tas="tmux attach -t"
+alias tkn="tmux kill-ses -t"      # kill session by name
+alias tka="tmux kill-ses -a"      # kill all sessions but the current
+alias tks="tmux kill-session"     # kill current session
+alias tls="tmux ls"   
+alias tn="tmux new -s"            
+alias ta="tmux attach-session"    # attach last session
+alias tas="tmux attach -t"        # attach session by name
 
 # Load Starship prompt
 eval "$(starship init zsh)"
