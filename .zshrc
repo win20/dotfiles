@@ -28,6 +28,7 @@ bindkey -v
 ### ALIASES ###
 alias la='ls -la'
 alias v="nvim"
+alias dd="sudo dnf install"
 
 # Navigation
 alias dev="cd ~/Dev"
