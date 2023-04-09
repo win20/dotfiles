@@ -25,10 +25,10 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Git fugitive
-keymap.set("n", "<leader>g", ":G<CR>")
+-- keymap.set("n", "<leader>g", ":G<CR>")
 keymap.set("n", "<leader>gaa", ":G add")
 keymap.set("n", "<leader>ga", ":G add .<CR>")
-keymap.set("n", "<leader>gc", ":G commit<CR>")
+--keymap.set("n", "<leader>gc", ":G commit<CR>")
 keymap.set("n", "<leader>gd", ":G pull<CR>")
 keymap.set("n", "<leader>gu", ":G push<CR>")
 
@@ -42,6 +42,18 @@ keymap.set("n", "<leader>b", "<cmd>lua require('telescope.builtin').git_branches
 keymap.set("n", "<leader>r", "<cmd>lua require('telescope.builtin').oldfiles()<cr>") -- recent files
 keymap.set("n", "<leader>7", "<cmd>lua require('telescope.builtin').treesitter()<cr>") -- recent files
 keymap.set("n", "<leader>1", "<cmd>lua require('telescope.builtin').lsp_references()<cr>") -- list references of word under cursor
+
+-- Comment
+local api = require("Comment.api")
+local config = require("Comment.config"):get()
+
+keymap.set("n", "<leader>/", api.toggle.linewise.current)
+local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+-- Toggle selection (blockwise)
+keymap.set("x", "<leader>/", function()
+	vim.api.nvim_feedkeys(esc, "nx", false)
+	api.toggle.linewise(vim.fn.visualmode())
+end)
 
 -- Trouble
 keymap.set("n", "<leader>2", "<cmd>TroubleToggle<cr>") -- diagnostics
