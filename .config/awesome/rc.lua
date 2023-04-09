@@ -392,7 +392,7 @@ clientkeys = gears.table.join(
 		if c.maximized then
 			awful.screen.focused().padding = 0
 		else
-			awful.screen.focused().padding = { left = "10", right = "10", top = "5", bottom = "10" }
+			awful.screen.focused().padding = { left = "15", right = "15", top = "15", bottom = "15" }
 		end
 		c.maximized = not c.maximized
 		c:raise()
@@ -538,11 +538,12 @@ awful.rules.rules = {
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
-client.connect_signal("property::maximized", function(c)
-	if c.maximized then
-		c.border_width = 0
-	end
-end)
+-- client.connect_signal("property::maximized", function(c)
+-- 	if c.maximized then
+-- 		c.border_width = 0
+-- 	end
+-- end)
+
 client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
 	-- i.e. put it at the end of others instead of setting it master.
