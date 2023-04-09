@@ -31,7 +31,6 @@ alias v="nvim"
 alias dd="sudo dnf install"
 
 # Navigation
-alias dev="cd ~/Dev"
 alias repos="cd ~/Dev/_repos"
 alias vconf="cd ~/.config/nvim"
 
