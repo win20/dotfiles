@@ -607,5 +607,5 @@ end)
 -- }}}
 
 -- Autostart applications
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("~/.config/polybar/launch.sh")
