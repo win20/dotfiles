@@ -44,6 +44,7 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 
 	use("kyazdani42/nvim-web-devicons")
+	use("ThePrimeagen/harpoon")
 
 	use("nvim-lualine/lualine.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
