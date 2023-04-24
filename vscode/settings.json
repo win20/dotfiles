@@ -1,0 +1,89 @@
+{
+  "workbench.colorTheme": "Ayu Mirage Bordered",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "storage.type.function",
+        "settings": {
+          "foreground": "#ef4565",
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "breadcrumbs.enabled": false,
+  "explorer.compactFolders": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false
+  },
+  "tabnine.experimentalAutoImports": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.enablePreview": false,
+  "editor.tabSize": 2,
+  "editor.fontFamily": "SauceCodePro Nerd Font",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.cursorStyle": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.defaultDateLocale": null,
+  "vsicons.dontShowNewVersionMessage": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.openEditors.visible": 0,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.statusBar.visible": false,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "javascript"
+  },
+  "editor.fontLigatures": true,
+  "json.schemas": [],
+  "editor.lineHeight": 1.5,
+  "editor.fontSize": 13,
+  "gitlens.views.repositories.files.layout": "list",
+  "gitlens.views.repositories.showWorktrees": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF ",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "window.zoomLevel": -1,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": [":tabn"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": [":tabp"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": [":tabnew"]
+    }
+  ],
+  "vim.leader": "<space>",
+}
