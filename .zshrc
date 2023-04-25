@@ -28,7 +28,18 @@ bindkey -v
 ### ALIASES ###
 alias la='ls -la'
 alias v="nvim"
-alias dd="sudo dnf install"
+
+function dd() {
+  if command -v yay > /dev/null; then
+    yay -S $1
+  elif command -v pacman > /dev/null; then 
+    sudo pacman -S $1
+  elif command -v dnf > /dev/null; then 
+    sudo dnf install $1
+  else
+    echo "No package manager found"
+  fi
+}
 
 # Navigation
 alias repos="cd ~/Dev/_repos"
@@ -55,3 +66,7 @@ alias tas="tmux attach -t"        # attach session by name
 # Load Starship prompt
 eval "$(starship init zsh)"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
