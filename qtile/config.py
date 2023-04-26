@@ -28,6 +28,8 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile import hook
+
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -70,7 +72,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Run rofi"),
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle floating mode"),
     Key([mod], "m", lazy.window.toggle_maximize(), desc="Toggle floating mode"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle floating mode"),
@@ -114,7 +116,7 @@ layouts = [
         border_focus='#d8dee9',
         border_normal='#3b4252',
         border_width=1,
-        margin=[8,8,8,8],
+        margin=[6,6,6,6],
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -140,24 +142,16 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(
-        wallpaper='~/Documents/Wallpapers/Annapurna_Ranges_1.jpg',
-        wallpaper_mode='stretch',
-        bottom=bar.Bar(
+status_bar = bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
@@ -165,11 +159,17 @@ screens = [
                 widget.QuickExit(),
             ],
             24,
-            margin=[8,0,0,0],
+            margin=[0,0,8,0],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-        top=bar.Gap(8),
+)
+
+screens = [
+    Screen(
+        wallpaper='~/Documents/Wallpapers/Annapurna_Ranges_1.jpg',
+        wallpaper_mode='stretch',
+        bottom=bar.Gap(8),
+        top=bar.Gap(36),
         left=bar.Gap(8),
         right=bar.Gap(8),
     ),
@@ -225,3 +225,8 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
