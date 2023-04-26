@@ -15,6 +15,8 @@ export HISTSIZE=10000
 # How many commands history will save on file.
 export SAVEHIST=10000
 
+export GCM_CREDENTIAL_STORE=cache
+
 # History won't save duplicates.
 setopt HIST_IGNORE_ALL_DUPS
 
