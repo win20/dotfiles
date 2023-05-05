@@ -47,9 +47,9 @@ keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>")
 keymap.set("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>")
 keymap.set("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
 keymap.set("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
-keymap.set("n", "1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
-keymap.set("n", "2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
-keymap.set("n", "3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
+keymap.set("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
+keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
+keymap.set("n", "<leader>0", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
 
 -- Comment
 local api = require("Comment.api")

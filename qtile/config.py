@@ -30,7 +30,6 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
 
-
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -69,13 +68,14 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn('rofi -show drun'), desc="Run rofi"),
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle floating mode"),
-    Key([mod], "m", lazy.window.toggle_maximize(), desc="Toggle floating mode"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle floating mode"),
+    Key([mod], "m", lazy.window.toggle_maximize(), desc="Maximize focused window"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Fullscreen focused window"),
+    Key([mod], "b", lazy.spawn('firefox'), desc="Launch firefox"),
 
     # Commands specific to xmonadtall
     # Key([mod], "m", lazy.layout.maximize(), desc="Toggle floating mode"),
@@ -116,7 +116,8 @@ layouts = [
         border_focus='#d8dee9',
         border_normal='#3b4252',
         border_width=1,
-        margin=[6,6,6,6],
+        margin=6,
+        border_on_single=True,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -227,6 +228,6 @@ wl_input_rules = None
 wmname = "LG3D"
 
 @hook.subscribe.startup_once
-def start_once():
+def startup_once():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
