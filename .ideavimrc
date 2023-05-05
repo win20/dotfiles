@@ -1,0 +1,15 @@
+let mapleader = " "
+
+imap jk <esc> 
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
+map <leader>tx :tabclose<CR>
+map <leader>s :wa<CR>
+
+map <leader>1 :action GotoDeclaration<CR>
+
+map <leader>/ :action CommentByLineComment<CR>
+
+map <leader>ff :action SearchEverywhere<CR>
+map <leader>fs :action FindInPath<CR>
+
