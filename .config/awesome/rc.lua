@@ -4,6 +4,7 @@ pcall(require, "luarocks.loader")
 
 -- Standard awesome library
 local gears = require("gears")
+local gfs = require("gears.filesystem")
 local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
@@ -113,7 +114,7 @@ mymainmenu = awful.menu({
 	},
 })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = gfs.get_configuration_dir() .. "icons/energy.png", menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -225,28 +226,35 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 30 })
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
-		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
-			layout = wibox.layout.fixed.horizontal,
-			mylauncher,
+		{
+			layout = wibox.layout.align.horizontal,
+			{ -- Left widgets
+				layout = wibox.layout.fixed.horizontal,
+				mylauncher,
+				-- s.mypromptbox,
+			},
+			-- s.mytasklist, -- Middle widget
 			s.mytaglist,
-			s.mypromptbox,
+			{ -- Right widgets
+				layout = wibox.layout.fixed.horizontal,
+				-- mykeyboardlayout,
+				wibox.widget.systray(),
+				-- mytextclock,
+				s.mylayoutbox,
+			},
 		},
-		s.mytasklist, -- Middle widget
-		{ -- Right widgets
-			layout = wibox.layout.fixed.horizontal,
-			mykeyboardlayout,
-			wibox.widget.systray(),
-			mytextclock,
-			s.mylayoutbox,
-		},
+		top = 5,
+		bottom = 5,
+		widget = wibox.container.margin,
 	})
 end)
 -- }}}
+
+-- wibox.container.margin()
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
@@ -337,7 +345,7 @@ globalkeys = gears.table.join(
 	end, { description = "restore minimized", group = "client" }),
 
 	-- Prompt
-	awful.key({ modkey }, "space", function()
+	awful.key({ modkey }, "r", function()
 		awful.util.spawn("rofi -show drun")
 	end, { description = "run rofi", group = "applications" }),
 
@@ -608,5 +616,5 @@ end)
 -- }}}
 
 -- Autostart applications
-awful.spawn.with_shell("picom")
-awful.spawn.with_shell("~/.config/polybar/launch.sh")
+-- awful.spawn.with_shell("picom")
+-- awful.spawn.with_shell("~/.config/polybar/launch.sh")
