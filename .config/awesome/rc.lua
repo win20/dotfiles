@@ -18,6 +18,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+local statusBar = require("statusBar")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -114,7 +115,7 @@ mymainmenu = awful.menu({
 	},
 })
 
-mylauncher = awful.widget.launcher({ image = gfs.get_configuration_dir() .. "icons/energy.png", menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = gfs.get_configuration_dir() .. "icons/power.png", menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -225,32 +226,38 @@ awful.screen.connect_for_each_screen(function(s)
 		buttons = tasklist_buttons,
 	})
 
-	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 30 })
+	statusBar.createStatusBar(s)
 
-	-- Add widgets to the wibox
-	s.mywibox:setup({
-		{
-			layout = wibox.layout.align.horizontal,
-			{ -- Left widgets
-				layout = wibox.layout.fixed.horizontal,
-				mylauncher,
-				-- s.mypromptbox,
-			},
-			-- s.mytasklist, -- Middle widget
-			s.mytaglist,
-			{ -- Right widgets
-				layout = wibox.layout.fixed.horizontal,
-				-- mykeyboardlayout,
-				wibox.widget.systray(),
-				-- mytextclock,
-				s.mylayoutbox,
-			},
-		},
-		top = 5,
-		bottom = 5,
-		widget = wibox.container.margin,
-	})
+	-- Create the wibox
+	-- 	s.mywibox = awful.wibar({ position = "top", screen = s, height = 30 })
+	--
+	-- 	-- Add widgets to the wibox
+	-- 	s.mywibox:setup({
+	-- 		{
+	-- 			layout = wibox.layout.align.horizontal,
+	-- 			{ -- Left widgets
+	-- 				layout = wibox.layout.fixed.horizontal,
+	-- 				{
+	-- 					widget = wibox.container.margin,
+	-- 					left = 8,
+	-- 				},
+	-- 				mylauncher,
+	-- 				-- s.mypromptbox,
+	-- 			},
+	-- 			-- s.mytasklist, -- Middle widget
+	-- 			s.mytaglist,
+	-- 			{ -- Right widgets
+	-- 				layout = wibox.layout.fixed.horizontal,
+	-- 				-- mykeyboardlayout,
+	-- 				wibox.widget.systray(),
+	-- 				-- mytextclock,
+	-- 				s.mylayoutbox,
+	-- 			},
+	-- 		},
+	-- 		top = 5,
+	-- 		bottom = 5,
+	-- 		widget = wibox.container.margin,
+	-- 	})
 end)
 -- }}}
 
@@ -349,10 +356,15 @@ globalkeys = gears.table.join(
 		awful.util.spawn("rofi -show drun")
 	end, { description = "run rofi", group = "applications" }),
 
-	-- Prompt
+	-- Firefox
 	awful.key({ modkey }, "b", function()
 		awful.util.spawn("firefox")
 	end, { description = "firefox", group = "applications" }),
+
+	-- Screenshot
+	awful.key({ modkey, "Shift" }, "p", function()
+		awful.spawn.with_shell("maim " .. os.date("%Y%m%d%H%M%S") .. ".png")
+	end, { description = "take screnshot", group = "applications" }),
 
 	awful.key({ modkey }, "x", function()
 		awful.prompt.run({
@@ -616,5 +628,5 @@ end)
 -- }}}
 
 -- Autostart applications
--- awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom")
 -- awful.spawn.with_shell("~/.config/polybar/launch.sh")
