@@ -24,20 +24,21 @@ return {
 		s.mywibox:setup({
 			{
 				layout = wibox.layout.align.horizontal,
+				expand = "none",
 				{ -- Left widgets
 					layout = wibox.layout.fixed.horizontal,
 					addSpacing({ left = 8 }),
 					mylauncher,
-					addSpacing({ right = 8 }),
+					addSpacing({ right = 10 }),
+					s.mylayoutbox,
 				},
 				-- s.mytasklist, -- Middle widget
-				s.mytaglist,
+				{ layout = wibox.layout.align.horizontal, s.mytaglist },
 				{ -- Right widgets
 					layout = wibox.layout.fixed.horizontal,
 					-- mykeyboardlayout,
 					wibox.widget.systray(),
-					-- mytextclock,
-					s.mylayoutbox,
+					mytextclock,
 				},
 			},
 			top = 5,
