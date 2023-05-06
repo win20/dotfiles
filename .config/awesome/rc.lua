@@ -191,7 +191,7 @@ awful.screen.connect_for_each_screen(function(s)
 	set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+	awful.tag({ "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
 
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
@@ -227,41 +227,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	statusBar.createStatusBar(s)
-
-	-- Create the wibox
-	-- 	s.mywibox = awful.wibar({ position = "top", screen = s, height = 30 })
-	--
-	-- 	-- Add widgets to the wibox
-	-- 	s.mywibox:setup({
-	-- 		{
-	-- 			layout = wibox.layout.align.horizontal,
-	-- 			{ -- Left widgets
-	-- 				layout = wibox.layout.fixed.horizontal,
-	-- 				{
-	-- 					widget = wibox.container.margin,
-	-- 					left = 8,
-	-- 				},
-	-- 				mylauncher,
-	-- 				-- s.mypromptbox,
-	-- 			},
-	-- 			-- s.mytasklist, -- Middle widget
-	-- 			s.mytaglist,
-	-- 			{ -- Right widgets
-	-- 				layout = wibox.layout.fixed.horizontal,
-	-- 				-- mykeyboardlayout,
-	-- 				wibox.widget.systray(),
-	-- 				-- mytextclock,
-	-- 				s.mylayoutbox,
-	-- 			},
-	-- 		},
-	-- 		top = 5,
-	-- 		bottom = 5,
-	-- 		widget = wibox.container.margin,
-	-- 	})
 end)
--- }}}
-
--- wibox.container.margin()
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
