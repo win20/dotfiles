@@ -19,7 +19,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 local statusBar = require("statusBar")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -151,6 +150,11 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Calendar widget, attach to date time widget
+local month_calendar = awful.widget.calendar_popup.month()
+month_calendar:attach(mytextclock, "tr")
+month_calendar:toggle()
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 	awful.button({}, 1, function(t)
@@ -253,13 +257,13 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-	awful.button({}, 3, function()
-		mymainmenu:toggle()
-	end),
-	awful.button({}, 4, awful.tag.viewnext),
-	awful.button({}, 5, awful.tag.viewprev)
-))
+-- root.buttons(gears.table.join(
+-- 	awful.button({}, 3, function()
+-- 		mymainmenu:toggle()
+-- 	end),
+-- 	awful.button({}, 4, awful.tag.viewnext),
+-- 	awful.button({}, 5, awful.tag.viewprev)
+-- ))
 -- }}}
 
 -- {{{ Key bindings
