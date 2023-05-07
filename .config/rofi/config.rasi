@@ -156,11 +156,12 @@ drun-display-format: "[<span weight='semibold'>{name}</span>]";
 * {
   bg: #4c566a;
   bg-alt: #4c566a;
-  bg-border: #3b4252;
+  bg-border: #ffffff;
   bg-selected: #434c5e;
 
   fg: #d08770;
   fg-alt: #d8dee9;
+  fg-border: #d8dee9;
 
   border: 1;
   margin: 0;
@@ -169,6 +170,8 @@ drun-display-format: "[<span weight='semibold'>{name}</span>]";
 }
 
 window {
+  border: 3px;
+  border-color: @fg-border;
   width: 30%;
   background-color: @bg;
 }
@@ -219,7 +222,7 @@ mainbox {
 }
 
 prompt {
-  enabled: true;
+  enabled: false;
   padding: 15 20; 
   background-color: @fg;
   text-color: @fg-alt;
