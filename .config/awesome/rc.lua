@@ -101,12 +101,21 @@ myawesomemenu = {
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
 	{ "restart", awesome.restart },
 	{
-		"quit",
+		"logout",
 		function()
 			awesome.quit()
 		end,
 	},
 }
+
+powerMenu = awful.menu({
+	items = {
+		{ "Sleep" },
+		{ "Logout" },
+		{ "Shutdown" },
+		{ "Restart" },
+	},
+})
 
 mymainmenu = awful.menu({
 	items = {
@@ -115,7 +124,7 @@ mymainmenu = awful.menu({
 	},
 })
 
-mylauncher = awful.widget.launcher({ image = gfs.get_configuration_dir() .. "icons/power.png", menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = gfs.get_configuration_dir() .. "icons/power.png", menu = powerMenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
