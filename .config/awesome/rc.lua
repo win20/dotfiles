@@ -108,12 +108,26 @@ myawesomemenu = {
 	},
 }
 
-powerMenu = awful.menu({
+local powerMenu = awful.menu({
 	items = {
-		{ "Sleep" },
-		{ "Logout" },
-		{ "Shutdown" },
-		{ "Restart" },
+		{
+			"Sleep",
+			function()
+				awful.spawn.with_shell("systemctl suspend")
+			end,
+		},
+		{
+			"Logout",
+			function()
+				awesome.quit()
+			end,
+		},
+		{
+			"Shutdown",
+			function()
+				awful.spawn.with_shell("shutdown -h now")
+			end,
+		},
 	},
 })
 
