@@ -68,8 +68,6 @@ alias tn="tmux new -s"
 alias ta="tmux attach-session"    # attach last session
 alias tas="tmux attach -t"        # attach session by name
 
-pfetch
-
 # Load Starship prompt
 eval "$(starship init zsh)"
 
