@@ -80,6 +80,17 @@ return packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+	use("simrat39/rust-tools.nvim")
+
+	use({
+		"rust-lang/rust.vim",
+		ft = { "rust", "rs" },
+		init = function()
+			vim.g.rustfmt_autosave = 1
+		end,
+	})
+
+	use("puremourning/vimspector")
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters

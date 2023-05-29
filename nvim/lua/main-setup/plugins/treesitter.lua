@@ -32,6 +32,8 @@ treesitter.setup({
 		"vim",
 		"dockerfile",
 		"gitignore",
+		"rust",
+		"toml",
 	},
 	context_commentstring = {
 		config = {
