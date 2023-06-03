@@ -3,6 +3,7 @@ require("dapui").setup()
 local dap, dapui = require("dap"), require("dapui")
 
 dap.adapters.codelldb = {
+
 	host = "${port}",
 	port = 13000,
 	executable = {

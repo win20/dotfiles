@@ -2,8 +2,19 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+local check_file_type_and_save = function()
+	local file_type = vim.api.nvim_buf_get_option(0, "filetype")
+	if file_type == "rust" then
+		vim.cmd("RustFmt | wa")
+	else
+		vim.cmd("wa")
+	end
+end
+
 keymap.set("i", "jk", "<ESC>")
-keymap.set("n", "<leader>s", ":RustFmt<CR> | :wa<CR>")
+-- keymap.set("n", "<leader>s", ":RustFmt<CR> | :wa<CR>")
+keymap.set("n", "<leader>s", check_file_type_and_save)
+
 keymap.set("n", "<leader>q", ":wq<CR>")
 -- keymap.set("n", "<leader>k", ":bnext<CR>")
 -- keymap.set("n", "<leader>j", ":bprev<CR>")

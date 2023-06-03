@@ -28,8 +28,6 @@ end
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
-	use("nvim-lua/plenary.nvim")
-
 	use("rmehri01/onenord.nvim")
 	use("christoomey/vim-tmux-navigator")
 
@@ -80,7 +78,20 @@ return packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-	use("simrat39/rust-tools.nvim")
+	use({
+		"simrat39/rust-tools.nvim",
+		ft = "rust",
+		dependencies = "neovim/nvim-lspconfig",
+		opts = function()
+			return require("main-setup.plugins.rust-tools")
+		end,
+		config = function(_, opts)
+			require("rust-tools").setup(opts)
+		end,
+	})
+
+	use("mfussenegger/nvim-dap")
+	use("nvim-lua/plenary.nvim")
 
 	use({
 		"rust-lang/rust.vim",
