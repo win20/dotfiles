@@ -356,7 +356,7 @@ globalkeys = gears.table.join(
 
 	-- Screenshot
 	awful.key({ modkey, "Shift" }, "p", function()
-		awful.spawn.with_shell("maim " .. os.date("%Y%m%d%H%M%S") .. ".png")
+		awful.spawn.with_shell("maim " .. "~/Screenshots/" .. os.date("%Y%m%d%H%M%S") .. ".png")
 	end, { description = "take screnshot", group = "applications" }),
 
 	awful.key({ modkey }, "x", function()
