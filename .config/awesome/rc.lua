@@ -349,10 +349,10 @@ globalkeys = gears.table.join(
 		awful.util.spawn("rofi -show drun")
 	end, { description = "run rofi", group = "applications" }),
 
-	-- Firefox
+	-- Google Chrome
 	awful.key({ modkey }, "b", function()
-		awful.util.spawn("firefox")
-	end, { description = "firefox", group = "applications" }),
+		awful.util.spawn("google-chrome-stable")
+	end, { description = "Google Chrome", group = "applications" }),
 
 	-- Screenshot
 	awful.key({ modkey, "Shift" }, "p", function()

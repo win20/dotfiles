@@ -37,7 +37,7 @@ return {
 				{ -- Right widgets
 					layout = wibox.layout.fixed.horizontal,
 					-- mykeyboardlayout,
-					wibox.widget.systray(),
+					-- wibox.widget.systray(),
 					mytextclock,
 				},
 			},
