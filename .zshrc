@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/nvim-macos/bin/nvim:/usr/local/go/bin:$HOME/.cargo/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/nvim-macos/bin/nvim:/usr/local/go/bin:$HOME/.cargo/bin:/usr/bin/lldb-vscode
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -24,7 +24,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
 ### PLUGINS
-
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 
@@ -48,7 +47,8 @@ function dd() {
 
 # Navigation
 alias repos="cd ~/Dev/_repos"
-alias vconf="cd ~/.config/nvim"
+alias vconf="nvim ~/.config/nvim"
+alias zconf="nvim ~/.zshrc"
 
 # Git 
 alias gs="git status"

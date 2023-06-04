@@ -63,6 +63,13 @@ keymap.set("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
 keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
 keymap.set("n", "<leader>0", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
 
+-- Vimspector
+-- keymap.set("n", "F9", "<cmd>call vimspector#Launch()<cr>")
+-- keymap.set("n", "db", ":call vimspector#ToggleBreakpoint()<cr>")
+
+-- Nvim DAP
+keymap.set("n", "db", ":lua require'dap'.toggle_breakpoint()<CR>")
+
 -- Comment
 local api = require("Comment.api")
 local config = require("Comment.config"):get()
