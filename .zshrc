@@ -24,7 +24,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
 ### PLUGINS
-source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 
@@ -68,7 +68,11 @@ alias tn="tmux new -s"
 alias ta="tmux attach-session"    # attach last session
 alias tas="tmux attach -t"        # attach session by name
 
+
 # Load Starship prompt
 eval "$(starship init zsh)"
 
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
