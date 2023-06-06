@@ -108,6 +108,10 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Laravel
+	use("jwalton512/vim-blade")
+	use("yaegassy/coc-blade")
+
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags

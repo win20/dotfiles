@@ -7,8 +7,8 @@ opt.number = true
 -- tabs & indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
+opt.expandtab = false
+opt.autoindent = false
 
 -- line wrapping
 opt.wrap = false
@@ -27,8 +27,6 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
-
-
 
 -- split windows
 opt.splitright = true

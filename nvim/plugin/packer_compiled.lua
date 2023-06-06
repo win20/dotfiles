@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["coc-blade"] = {
+    loaded = true,
+    path = "/home/winb/.local/share/nvim/site/pack/packer/start/coc-blade",
+    url = "https://github.com/yaegassy/coc-blade"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -264,6 +269,11 @@ _G.packer_plugins = {
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  ["vim-blade"] = {
+    loaded = true,
+    path = "/home/winb/.local/share/nvim/site/pack/packer/start/vim-blade",
+    url = "https://github.com/jwalton512/vim-blade"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -300,8 +310,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType rs ++once lua require("packer.load")({'rust.vim'}, { ft = "rs" }, _G.packer_plugins)]]
 vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust.vim'}, { ft = "rust" }, _G.packer_plugins)]]
+vim.cmd [[au FileType rs ++once lua require("packer.load")({'rust.vim'}, { ft = "rs" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
