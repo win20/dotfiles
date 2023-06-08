@@ -86,7 +86,6 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -167,6 +166,8 @@ require('lazy').setup({
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',         opts = {} },
+  { 'christoomey/vim-tmux-navigator' },
+
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -192,7 +193,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   { 'ThePrimeagen/harpoon' },
-  { 'windwp/nvim-autopairs' },
   { "windwp/nvim-ts-autotag", dependencies = { 'nvim-treesitter' } },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -206,6 +206,7 @@ require('lazy').setup({
   --    up-to-date with whatever is in the kickstart repo.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
+  { import = 'plugins.autopairs' },
   { import = 'custom.plugins' },
 }, {})
 

@@ -9,8 +9,6 @@ vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', '<C-h>', ":wincmd h<CR>")
-vim.keymap.set('n', '<C-j>', ":wincmd j<CR>")
-vim.keymap.set('n', '<C-k>', ":wincmd k<CR>")
 vim.keymap.set('n', '<C-l>', ":wincmd l<CR>")
 
 -- Remap for dealing with word wrap
