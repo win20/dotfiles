@@ -284,6 +284,11 @@ _G.packer_plugins = {
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
   },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/winb/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/winb/.local/share/nvim/site/pack/packer/start/vim-surround",
