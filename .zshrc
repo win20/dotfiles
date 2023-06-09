@@ -34,9 +34,7 @@ alias la='ls -la'
 alias v="nvim"
 
 function dd() {
-  if command -v yay > /dev/null; then
-    yay -S $1
-  elif command -v pacman > /dev/null; then 
+  if command -v pacman > /dev/null; then 
     sudo pacman -S $1
   elif command -v dnf > /dev/null; then 
     sudo dnf install $1
@@ -44,6 +42,9 @@ function dd() {
     echo "No package manager found"
   fi
 }
+
+alias ls="exa"
+alias la="exa -la"
 
 # Navigation
 alias repos="cd ~/Dev/_repos"
