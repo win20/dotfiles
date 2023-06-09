@@ -16,8 +16,14 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  emmet_ls = {
+    default_config = {
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" }
+    }
+  }
 }
 
+-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
 -- Setup neovim lua configuration
 require('neodev').setup()
 
@@ -42,3 +48,11 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+local lspconfig = require "lspconfig"
+
+lspconfig["emmet_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
+})

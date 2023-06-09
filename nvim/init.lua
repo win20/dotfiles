@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'rmehri01/onenord.nvim',
+  'jwalton512/vim-blade',
 
   -- Git
   'tpope/vim-fugitive',
