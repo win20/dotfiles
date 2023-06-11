@@ -22,13 +22,7 @@ local servers = {
     }
   },
   -- phpactor = {}
-  intelephense = {
-    diagnostics = {
-      enable = true,
-      globals = { 'cannot' }
-    }
-  },
-
+  intelephense = {},
 }
 
 -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
