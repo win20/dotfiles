@@ -20,7 +20,15 @@ local servers = {
     default_config = {
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" }
     }
-  }
+  },
+  -- phpactor = {}
+  intelephense = {
+    diagnostics = {
+      enable = true,
+      globals = { 'cannot' }
+    }
+  },
+
 }
 
 -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },

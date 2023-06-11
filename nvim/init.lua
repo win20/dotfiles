@@ -152,6 +152,10 @@ require('lazy').setup({
     dependencies = { 'hrsh7th/nvim-cmp' },
     config = require('plugins.autopairs'),
   },
+  {
+    'phpactor/phpactor',
+    ft = { 'php' }
+  },
 }, {})
 
 
