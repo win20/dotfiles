@@ -69,9 +69,6 @@ alias tn="tmux new -s"
 alias ta="tmux attach-session"    # attach last session
 alias tas="tmux attach -t"        # attach session by name
 
-# Docker
-alias docker="sudo docker"
-
 
 # Load Starship prompt
 eval "$(starship init zsh)"
