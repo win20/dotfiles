@@ -18,6 +18,11 @@ vim.keymap.set('i', 'jk', "<ESC>")
 vim.keymap.set('n', '<leader>s', ":wa<CR>")
 vim.keymap.set('n', '<leader>q', ":wq<CR>")
 
+-- [[ FUGITIVE ]]
+vim.keymap.set('n', '<leader>ga', ":G add .<CR>")
+vim.keymap.set('n', '<leader>gc', ":G commit<CR>")
+vim.keymap.set('n', '<leader>gu', ":G push<CR>")
+vim.keymap.set('n', '<leader>gd', ":G pull<CR>")
 
 -- [[ TELESCOPE ]] -> See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
