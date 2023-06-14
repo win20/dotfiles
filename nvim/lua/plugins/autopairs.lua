@@ -5,7 +5,9 @@ return function()
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local cmp = require('cmp')
 
-  npairs.add_rule(Rule('<', '>'))
+  npairs.add_rule(
+    Rule('<', '>')
+  )
 
   cmp.event:on(
     'confirm_done',
