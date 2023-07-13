@@ -49,7 +49,7 @@ alias la="exa -la"
 alias sync="sync.sh"
 
 # Navigation
-alias repos="cd ~/Dev/_repos"
+alias repos="cd ~/Dev/repos"
 alias vconf="nvim ~/.config/nvim"
 alias zconf="nvim ~/.zshrc"
 
