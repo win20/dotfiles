@@ -31,7 +31,7 @@ bindkey -v
 
 ### ALIASES ###
 alias la='ls -la'
-alias v="nvim"
+alias v="~/Applications/nvim-linux64/bin/nvim"
 
 function dd() {
   if command -v pacman > /dev/null; then 

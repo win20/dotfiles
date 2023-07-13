@@ -1,6 +1,3 @@
-local keymaps = require 'core.keymaps'
-require 'core.vim_settings'
-
 -- [[ Install package manager ]] -> `:help lazy.nvim.txt`
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -73,7 +70,7 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
-      on_attach = keymaps.on_attach_gitsigns
+      -- on_attach = keymaps.on_attach_gitsigns
     },
   },
   {
@@ -83,7 +80,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onenord',
+        -- theme = 'onenord',
         component_separators = '|',
         section_separators = '',
       },
@@ -119,7 +116,8 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    lazy = false
   },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
@@ -158,6 +156,8 @@ require('lazy').setup({
   },
 }, {})
 
+local keymaps = require 'core.keymaps'
+require 'core.vim_settings'
 
 -- [[ CONFIGURE PLUGINS ]] --
 
