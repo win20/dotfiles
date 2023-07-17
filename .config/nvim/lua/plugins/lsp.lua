@@ -24,6 +24,8 @@ local servers = {
   -- phpactor = {}
   intelephense = {},
   rust_analyzer = {},
+  pyright = {},
+  tsserver = {},
 }
 
 -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
