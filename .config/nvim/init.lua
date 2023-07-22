@@ -13,7 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'rmehri01/onenord.nvim',
+  -- 'rmehri01/onenord.nvim',
+  -- 'sam4llis/nvim-tundra',
+  -- 'frenzyexists/aquarium-vim',
+  'kvrohit/mellow.nvim',
+
   'jwalton512/vim-blade',
 
   -- Git
