@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/nvim-macos/bin/nvim:/usr/local/go/bin:$HOME/.cargo/bin:/usr/bin/lldb-vscode:$HOME/.local/bin:$HOME/.obsidian
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/nvim-macos/bin/nvim:/usr/local/go/bin:$HOME/.cargo/bin:/usr/bin/lldb-vscode:$HOME/.local/bin:$HOME/.obsidian:/opt/homebrew/bin/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -30,7 +30,6 @@ source $ZSH/plugins/zsh-z/zsh-z.plugin.zsh
 bindkey -v
 
 ### ALIASES ###
-alias la='ls -la'
 alias v="~/Applications/nvim-linux64/bin/nvim"
 
 function dd() {
