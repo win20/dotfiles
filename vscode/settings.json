@@ -1,32 +1,19 @@
 {
-  "workbench.colorTheme": "Ayu Mirage Bordered",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "storage.type.function",
-        "settings": {
-          "foreground": "#ef4565",
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
   "breadcrumbs.enabled": false,
   "explorer.compactFolders": false,
   "files.trimTrailingWhitespace": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": false
+    "source.fixAll": false,
+    "source.organizeImports": false,
   },
   "tabnine.experimentalAutoImports": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.editor.enablePreview": false,
   "editor.tabSize": 2,
-  "editor.fontFamily": "SauceCodePro Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.cursorStyle": "line",
   "gitlens.currentLine.enabled": false,
@@ -41,10 +28,10 @@
   "tailwindCSS.includeLanguages": {
     "plaintext": "javascript"
   },
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
   "json.schemas": [],
   "editor.lineHeight": 1.5,
-  "editor.fontSize": 13,
+  "editor.fontSize": 15,
   "gitlens.views.repositories.files.layout": "list",
   "gitlens.views.repositories.showWorktrees": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -52,7 +39,7 @@
   "typescript.preferences.quoteStyle": "single",
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
-  "terminal.integrated.fontFamily": "MesloLGS NF ",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "[python]": {
     "editor.formatOnType": true
   },
@@ -69,6 +56,18 @@
       "commands": ["workbench.action.files.save"]
     },
     {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["actions.find"]
+    },
+    {
       "before": ["<leader>", "s"],
       "commands": ["workbench.action.files.save"]
     },
@@ -83,7 +82,65 @@
     {
       "before": ["<leader>", "n"],
       "commands": [":tabnew"]
-    }
+    },
+    {
+      "before": ["1"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+     {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
   ],
+  "window.titleBarStyle": "custom",
   "vim.leader": "<space>",
+  "editor.lineNumbers": "relative",
+  "workbench.colorTheme": "Bearded Theme Arc EolStorm",
+  "workbench.colorCustomizations": {
+    "editor.background": "#161617",
+    "minimap.background": "#161617",
+    "activityBar.background": "#1f1f1f",
+    "editorGutter.background": "#161617",
+    "editorGroupHeader.tabsBackground": "#161617",
+    "tab.activeBackground": "#161617",
+    "tab.inactiveBackground": "#161617",
+    "sideBar.background": "#161617",
+    "titleBar.activeBackground": "#161617",
+    "titleBar.inactiveBackground": "#161617",
+    "terminal.background": "#161617",
+    "menu.background": "#1f1f1f",
+    "menu.foreground": "#c9c9c9",
+    "panel.background": "#1f1f1f"
+  },
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "[Bearded Theme Arc EolStorm]": {
+      "strings": "#6A9F60",
+      "textMateRules": [
+        {
+          "scope": "string.quoted.single.ts",
+          "settings": {
+            "foreground": "#6A9F60"
+          }
+        }
+      ]
+    }
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "[Bearded Theme Arc EolStorm]": {
+      "rules": {
+        "parameter": "#679891",
+        "string": "#6A9F60"
+      }
+    }
+  },
+  "explorer.confirmDelete": false
 }
