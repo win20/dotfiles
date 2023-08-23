@@ -71,6 +71,10 @@ alias tn="tmux new -s"
 alias ta="tmux attach-session"    # attach last session
 alias tas="tmux attach -t"        # attach session by name
 
+# SSH
+alias sshroot="ssh -p 1026 root@178.62.4.222"
+alias sshwb="ssh -i ~/.ssh/winbarua_id_rsa -p 1026 winbarua@178.62.4.222"
+
 
 # Load Starship prompt
 eval "$(starship init zsh)"
