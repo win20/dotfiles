@@ -130,7 +130,7 @@
       "window.titleBarStyle": "custom",
       "vim.leader": "<space>",
       "editor.lineNumbers": "relative",
-      "workbench.colorTheme": "Bearded Theme Arc Reversed",
+      "workbench.colorTheme": "Bearded Theme Black & Emerald",
       "editor.minimap.enabled": false,
-      "explorer.confirmDelete": false
+      "explorer.confirmDelete": false,
 }
