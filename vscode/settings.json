@@ -1,136 +1,183 @@
 {
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell"
-        },
-        "Command Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ],
-            "args": [],
-            "icon": "terminal-cmd"
-        },
-        "Git Bash": {
-            "source": "Git Bash"
-        },
-        "Ubuntu (WSL)": {
-            "path": "C:\\Windows\\System32\\wsl.exe",
-            "args": [
-                "-d",
-                "Ubuntu"
-            ]
-        }
+  // Integrated Terminal //
+  "terminal.integrated.profiles.windows": {
+      "PowerShell": {
+          "source": "PowerShell",
+          "icon": "terminal-powershell"
+      },
+      "Command Prompt": {
+          "path": [
+              "${env:windir}\\Sysnative\\cmd.exe",
+              "${env:windir}\\System32\\cmd.exe"
+          ],
+          "args": [],
+          "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+          "source": "Git Bash"
+      },
+      "Ubuntu (WSL)": {
+          "path": "C:\\Windows\\System32\\wsl.exe",
+          "args": [
+              "-d",
+              "Ubuntu"
+          ]
+      }
+  },
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+
+
+  // VIM //
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     },
-    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": [":tabn"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": [":tabp"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": [":tabnew"]
+    },
+    {
+      "before": ["1"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+      {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+  ],
 
 
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-      },
-      "workbench.iconTheme": "material-icon-theme",
-      "breadcrumbs.enabled": false,
-      "explorer.compactFolders": false,
-      "files.trimTrailingWhitespace": true,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": false,
-        "source.organizeImports": false,
-      },
-      "tabnine.experimentalAutoImports": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2,
-      "editor.fontFamily": "JetBrainsMono Nerd Font",
-      "javascript.updateImportsOnFileMove.enabled": "always",
-      "terminal.integrated.cursorStyle": "line",
-      "gitlens.currentLine.enabled": false,
-      "gitlens.hovers.currentLine.over": "line",
-      "gitlens.statusBar.enabled": false,
-      "gitlens.defaultDateLocale": null,
-      "vsicons.dontShowNewVersionMessage": true,
-      "liveServer.settings.donotShowInfoMsg": true,
-      "explorer.openEditors.visible": 0,
-      "workbench.editor.tabCloseButton": "off",
-      "workbench.statusBar.visible": false,
-      "tailwindCSS.includeLanguages": {
-        "plaintext": "javascript"
-      },
-      "editor.fontLigatures": false,
-      "json.schemas": [],
-      "editor.lineHeight": 1.5,
-      "editor.fontSize": 15,
-      "gitlens.views.repositories.files.layout": "list",
-      "gitlens.views.repositories.showWorktrees": false,
-      "typescript.updateImportsOnFileMove.enabled": "always",
-      "javascript.preferences.quoteStyle": "single",
-      "typescript.preferences.quoteStyle": "single",
-      "prettier.singleQuote": true,
-      "prettier.jsxSingleQuote": true,
-      "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-      "[python]": {
-        "editor.formatOnType": true
-      },
-      "window.zoomLevel": -1,
-      "vim.insertModeKeyBindings": [
-        {
-          "before": ["j", "k"],
-          "after": ["<Esc>"]
-        },
-      ],
-      "vim.normalModeKeyBindingsNonRecursive": [
-        {
-          "before": ["<leader>", "s"],
-          "commands": ["workbench.action.files.save"]
-        },
-        {
-          "before": ["<leader>", "f", "f"],
-          "commands": ["workbench.action.quickOpen"]
-        },
-        {
-          "before": ["<leader>", "f", "s"],
-          "commands": ["workbench.action.findInFiles"]
-        },
-        {
-          "before": ["<leader>", "/"],
-          "commands": ["actions.find"]
-        },
-        {
-          "before": ["<leader>", "s"],
-          "commands": ["workbench.action.files.save"]
-        },
-        {
-          "before": ["<leader>", "k"],
-          "commands": [":tabn"]
-        },
-        {
-          "before": ["<leader>", "j"],
-          "commands": [":tabp"]
-        },
-        {
-          "before": ["<leader>", "n"],
-          "commands": [":tabnew"]
-        },
-        {
-          "before": ["1"],
-          "commands": ["workbench.view.explorer"]
-        },
-        {
-          "before": ["<leader>", "e"],
-          "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-         {
-          "before": ["<leader>", "q"],
-          "commands": ["workbench.action.closeActiveEditor"]
-        },
-        {
-          "before": ["<leader>", "t"],
-          "commands": ["workbench.action.terminal.toggleTerminal"]
-        },
-      ],
-      "window.titleBarStyle": "custom",
-      "vim.leader": "<space>",
-      "editor.lineNumbers": "relative",
-      "workbench.colorTheme": "Bearded Theme Black & Emerald",
-      "editor.minimap.enabled": false,
-      "explorer.confirmDelete": false,
+  // Window //
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+
+
+  // APC Extension //
+  "apc.font.family": "iosevka custom",
+  "apc.monospace.font.family": "iosevka custom",
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "frame": false,
+  },
+  "apc.menubar.compact": true,
+  "apc.sidebar.titlebar": {
+    "fontSize": 12,
+    "height": 30
+  },
+  "apc.activityBar": {
+    "position": "bottom",
+    "size": 30,
+    "itemMargin": 0
+  },
+
+
+  // Workbench UI //
+  "workbench.statusBar.visible": true,
+  "workbench.colorTheme": "Vitesse Black",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.indent": 12,
+  "workbench.tree.renderIndentGuides": "onHover",
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#b1b1b1",
+    "activityBar.activeBorder": "#dbd7caed",
+    "editor.selectionBackground": "#3d3d3d"
+  },
+
+
+  // Editor //
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 4,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": false,
+  "editor.lineHeight": 21,
+  "editor.fontSize": 14,
+  "editor.fontWeight": 600,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "solid",
+
+
+  // Explorer //
+  "explorer.openEditors.visible": 1,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+
+  // Formatting //
+  "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "javascript"
+  },
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+
+
+  // Language specific //
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+
+  // Misc //
+  "breadcrumbs.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "security.workspace.trust.untrustedFiles": "open",
 }
