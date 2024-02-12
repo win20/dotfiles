@@ -45,7 +45,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.opt.background = 'dark'
-vim.cmd('colorscheme mellow')
+vim.cmd('colorscheme vitesse')
 
 -- [[ Highlight on yank ]] -> `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
