@@ -7,20 +7,20 @@ local config = wezterm.config_builder()
 -- CONFIG --
 
 -- Applications --
-config.default_prog = {'C:/Windows/system32/wsl.exe', '--cd', '~/dev'}
+config.default_prog = { 'C:/Windows/system32/wsl.exe', '--cd', '~/dev' }
 config.launch_menu = {
     {
         label = 'Ubuntu',
-        args = {'C:/Windows/system32/wsl.exe', '--cd', '~/dev'},
+        args = { 'C:/Windows/system32/wsl.exe', '--cd', '~/dev' },
     },
     {
         label = 'Git Bash',
-        args = {'C:/Program Files/Git/bin/bash.exe', '-i', '-l'},
+        args = { 'C:/Program Files/Git/bin/bash.exe', '-i', '-l' },
         cwd = 'C:/Users/winba/Postman'
     },
     {
         label = 'Bash',
-        args = {'bash', '-l'}
+        args = { 'bash', '-l' }
     },
 }
 
@@ -31,8 +31,8 @@ config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 config.tab_bar_at_bottom = true
 config.window_padding = {
-    left = 5,
-    right = 0,
+    left = 20,
+    right = 5,
     top = -5,
     bottom = 0,
 }
@@ -110,25 +110,25 @@ config.keys = {
     {
         key = 'h',
         mods = 'LEADER|SHIFT',
-        action = wezterm.action.AdjustPaneSize {'Left', 5},
+        action = wezterm.action.AdjustPaneSize { 'Left', 5 },
     },
     {
         key = 'j',
         mods = 'LEADER|SHIFT',
-        action = wezterm.action.AdjustPaneSize {'Down', 5},
+        action = wezterm.action.AdjustPaneSize { 'Down', 5 },
     },
     {
         key = 'k',
         mods = 'LEADER|SHIFT',
-        action = wezterm.action.AdjustPaneSize {'Up', 5},
+        action = wezterm.action.AdjustPaneSize { 'Up', 5 },
     },
     {
         key = 'l',
         mods = 'LEADER|SHIFT',
-        action = wezterm.action.AdjustPaneSize {'Right', 5},
+        action = wezterm.action.AdjustPaneSize { 'Right', 5 },
     },
     { key = "c", mods = "CTRL", action = wezterm.action.CopyTo 'Clipboard' },
-	{ key = "v", mods = "CTRL", action =  wezterm.action.PasteFrom 'Clipboard' }
+    { key = "v", mods = "CTRL", action = wezterm.action.PasteFrom 'Clipboard' }
 }
 
 return config
