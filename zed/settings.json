@@ -8,7 +8,22 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "Ayu Dark",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "vim_mode": true
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "tab_size": 2,
+  "languages": {
+    "PHP": {
+      "tab_size": 4
+    },
+    "TypeScript": {
+      "tab_size": 2
+    },
+    "JavaScript": {
+      "tab_size": 2
+    }
+  }
 }
+
