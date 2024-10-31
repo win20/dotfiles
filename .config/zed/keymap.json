@@ -1,0 +1,73 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      // "down": ["workspace::SendKeystrokes", "4 j"]
+      // "up": ["workspace::SendKeystrokes", "4 k"]
+      "space s": "workspace::SaveAll",
+      "space j": "pane::ActivatePrevItem",
+      "space k": "pane::ActivateNextItem",
+      "space f s": "workspace::NewSearch",
+      "space f f": "file_finder::Toggle",
+      "space q": "pane::CloseActiveItem",
+      "space t t": "workspace::NewTerminal",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    // Visual, visual line & visual block modes
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  {
+    // Insert mode
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "ctrl-j": "editor::MoveDown",
+      "ctrl-k": "editor::MoveUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-j": "editor::JoinLines"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+
+  {
+    "bindings": {
+      // navigation within UI menus
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev",
+      "alt-f12": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      // navigation within code suggestions
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrev"
+    }
+  }
+]
