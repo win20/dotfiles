@@ -13,3 +13,5 @@ opt.expandtab = true
 opt.shiftwidth = indent_width
 opt.smartindent = true
 
+vim.o.digraph = false
+
