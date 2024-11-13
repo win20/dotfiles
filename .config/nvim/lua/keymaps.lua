@@ -8,6 +8,7 @@ map('n', '<leader>q', ":wq<CR>")
 map('n', '<leader>Q', ":q!<CR>")
 map('n', '<leader>e', ":Ex<CR>")
 map("n", "<leader>c", ":noh<CR>", { desc = "Remove all hightlights in current buffer" })
+map('n', '<leader>w', ":tabclose<CR>", { desc = "Close the current tab page"})
 
 
 -- Fuzzy finding with fzf --
@@ -18,3 +19,6 @@ map("n", "<leader>f", fzf.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader><leader>", fzf.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>?", fzf.oldfiles, { desc = "Telescope recent files" })
 
+
+-- Git --
+map('n', '<leader>G', ":Git<CR>", { desc = "Get current git status"})
