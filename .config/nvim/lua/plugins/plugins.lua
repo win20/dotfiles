@@ -47,9 +47,9 @@ return {
     {
 	"tpope/vim-fugitive",
         cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse" },
-        config = function()
-            -- Optional: Configure vim-fugitive or add custom mappings here
-            vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git Status" })
-        end,
     },
+
+    {
+        "ThePrimeagen/harpoon"
+    }
 }
