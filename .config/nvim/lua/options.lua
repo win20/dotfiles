@@ -18,13 +18,13 @@ opt.syntax = "enable"
 wo.relativenumber = true
 
 -- Indentation --
-opt.autoindent = true
-opt.expandtab = true
+opt.autoindent = false
+opt.expandtab = false
 opt.shiftwidth = INDENT
 opt.smartindent = true
--- opt.softtabstop = INDENT
--- opt.tabstop = INDENT
--- opt.shiftround = true
+opt.softtabstop = INDENT
+opt.tabstop = INDENT
+opt.shiftround = true
 
 -- Search --
 opt.hlsearch = true

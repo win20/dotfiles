@@ -1,14 +1,14 @@
 local map = vim.keymap.set
 
--- Vim keymaps --
+-- Vim --
 map("i", "jk", "<ESC>")
 map("n", "<leader>e", ":Ex<CR>")
 map('n', '<leader>s', ":wa<CR>")
 map('n', '<leader>q', ":wq<CR>")
 map('n', '<leader>Q', ":q!<CR>")
 map('n', '<leader>e', ":Ex<CR>")
-map("n", "<leader>c", ":noh<CR>", { desc = "Remove all hightlights in current buffer" })
-map('n', '<leader>w', ":tabclose<CR>", { desc = "Close the current tab page"})
+map("n", "<leader>z", ":noh<CR>", { desc = "Remove all hightlights in current buffer" })
+map('n', '<leader>w', ":tabclose<CR>", { desc = "Close the current tab page" })
 
 
 -- Splits --
@@ -29,14 +29,26 @@ map("n", "<leader>?", fzf.oldfiles, { desc = "Telescope recent files" })
 
 
 -- Git --
-map('n', '<leader>G', ":Git<CR>", { desc = "Get current git status"})
+map('n', '<leader>G', ":Git<CR>", { desc = "Get current git status" })
 
 
 -- Harpoon --
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
-map('n', '<leader>a', harpoon_mark.add_file, { desc = "Add file to harpoon"})
-map('n', '<leader>h', harpoon_ui.toggle_quick_menu, { desc = "Show harpoon menu"})
-map('n', '<leader>j', harpoon_ui.nav_prev, { desc = "Previous harpoon file"})
-map('n', '<leader>k', harpoon_ui.nav_next, { desc = "Next harpoon file"})
+map('n', '<leader>a', harpoon_mark.add_file, { desc = "Add file to harpoon" })
+map('n', '<leader>h', harpoon_ui.toggle_quick_menu, { desc = "Show harpoon menu" })
+map('n', '<leader>j', harpoon_ui.nav_prev, { desc = "Previous harpoon file" })
+map('n', '<leader>k', harpoon_ui.nav_next, { desc = "Next harpoon file" })
+
+
+map('n', '-', "<CMD>Oil<CR>", { desc = "Open parent folder with oil.nvim" })
+
+
+-- LSP --
+map("n", "K", vim.lsp.buf.hover, {})
+map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Open parent folder with oil.nvim" })
+map("n", "gd", vim.lsp.buf.definition, {})
+map("n", "<leader>gr", vim.lsp.buf.references, {})
+map("n", "<leader>gf", vim.lsp.buf.format, {})
+map('n', '<space>rn', vim.lsp.buf.rename, {})
 
