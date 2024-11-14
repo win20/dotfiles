@@ -5,14 +5,13 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Highlight on yank
 autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = "IncSearch",
-            timeout = "200"
-        })
-    end
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = "200",
+		})
+	end,
 })
-
 
 -- SET FILE SPECIFIC TAB WIDTH --
 -- autocmd("Filetype", {
@@ -21,9 +20,8 @@ autocmd("TextYankPost", {
 -- })
 --
 
-
 -- Set colorcolumn
 autocmd("Filetype", {
-    pattern = { "python", "rst", "c", "cpp", "javascript", "typescript" },
-    command = "set colorcolumn=80"
+	pattern = { "python", "rst", "c", "cpp", "javascript", "typescript" },
+	command = "set colorcolumn=80",
 })

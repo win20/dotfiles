@@ -1,5 +1,5 @@
 return function()
-	local null_ls = require "null-ls"
+	local null_ls = require("null-ls")
 
 	-- -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 	-- local formatting = null_ls.builtins.formatting
@@ -12,9 +12,9 @@ return function()
 	--     custom.setup_sources(null_ls.builtins)
 	--     or {}
 
-	null_ls.setup {
+	null_ls.setup({
 		sources = {
 			null_ls.builtins.formatting.stylua,
 		},
-	}
+	})
 end

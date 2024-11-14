@@ -1,17 +1,16 @@
 return function()
-    local lspconfig = require("lspconfig")
-    local mason = require("mason")
+	local lspconfig = require("lspconfig")
+	local mason = require("mason")
 
-    mason.setup()
+	mason.setup()
 
-    lspconfig.lua_ls.setup {
-	settings = {
-	    Lua = {
-		diagnostics = {
-		    globals = {"vim"},
-		}
-	    }
-	}
-    }
+	lspconfig.lua_ls.setup({
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+			},
+		},
+	})
 end
-

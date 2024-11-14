@@ -39,11 +39,11 @@ opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
 opt.listchars = {
-    tab = "┊ ",
-    trail = "·",
-    extends = "»",
-    precedes = "«",
-    nbsp = "×"
+	tab = "┊ ",
+	trail = "·",
+	extends = "»",
+	precedes = "«",
+	nbsp = "×",
 }
 
 opt.cmdheight = 0

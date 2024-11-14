@@ -3,6 +3,6 @@ return function()
 	config.setup({
 		highlight = { enable = true },
 		indent = { enable = true },
-		ensure_installed = { "go", "lua" }
+		ensure_installed = { "go", "lua" },
 	})
 end
