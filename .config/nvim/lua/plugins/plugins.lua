@@ -46,11 +46,6 @@ return {
 	},
 
 	{
-		"tpope/vim-fugitive",
-		cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse" },
-	},
-
-	{
 		"ThePrimeagen/harpoon",
 	},
 
@@ -75,5 +70,17 @@ return {
 		dependencies = { "nvimtools/none-ls-extras.nvim" },
 		lazy = false,
 		config = require("plugins.configs.none-ls"),
+	},
+
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed.
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+		config = true,
 	},
 }
