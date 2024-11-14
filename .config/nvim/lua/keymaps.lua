@@ -27,6 +27,7 @@ map("n", "<leader>?", fzf.oldfiles, { desc = "Telescope recent files" })
 
 -- Git --
 map("n", "<leader>G", ":Git<CR>", { desc = "Get current git status" })
+map("n", "<leader>GU", ":Git push<CR>", { desc = "Get current git status" })
 
 -- Harpoon --
 local harpoon_mark = require("harpoon.mark")
