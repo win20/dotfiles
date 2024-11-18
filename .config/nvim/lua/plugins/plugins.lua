@@ -2,6 +2,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+		lazy = false,
 		dependencies = {
 			"williamboman/mason.nvim",
 		},
@@ -10,6 +11,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
+		lazy = false,
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 		},

@@ -21,7 +21,7 @@ map("n", "<C-l>", "<C-w>l")
 -- Fuzzy finding with fzf --
 local fzf = require("telescope.builtin")
 map("n", "<leader>ff", fzf.find_files, { desc = "Telescope find files" })
-map("n", "<leader>f", fzf.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>fs", fzf.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader><leader>", fzf.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>?", fzf.oldfiles, { desc = "Telescope recent files" })
 

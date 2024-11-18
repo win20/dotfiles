@@ -13,4 +13,6 @@ return function()
 			},
 		},
 	})
+
+	lspconfig.gopls.setup({})
 end
