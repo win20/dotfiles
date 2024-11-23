@@ -36,6 +36,7 @@ alias gc="git commit -m"
 alias gd="git pull"
 alias gu="git push"
 alias gb="git checkout -b"
+alias lg="lazygit"
 
 # Plugins
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
