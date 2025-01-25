@@ -1,15 +1,18 @@
 let mapleader = " "
+:set relativenumber
+:set number
+set commentary
 
-imap jk <esc> 
-map <leader>tn :tabnext<CR>
-map <leader>tp :tabprevious<CR>
-map <leader>tx :tabclose<CR>
+imap jk <esc>
+set timeoutlen=1000
 map <leader>s :wa<CR>
+nmap <leader>k <Action>(NextTab)
+nmap <leader>j <Action>(PreviousTab)
+nmap <leader>j <Action>(PreviousTab)
+nmap <leader>w <Action>(CloseContent)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
 
-map <leader>1 :action GotoDeclaration<CR>
+" map <leader>gc :action CommentByLineComment<CR>
 
-map <leader>/ :action CommentByLineComment<CR>
-
-map <leader>ff :action SearchEverywhere<CR>
+map <leader>ff :action GotoFile<CR>
 map <leader>fs :action FindInPath<CR>
-
