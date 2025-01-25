@@ -14,6 +14,7 @@ vim.opt.fileencoding = "utf-8"               -- the encoding written to a file
 opt.encoding = "utf-8"                       -- the encoding
 opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
 opt.syntax = "enable"
+opt.signcolumn = "yes"
 
 wo.relativenumber = true
 
