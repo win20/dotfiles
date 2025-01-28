@@ -1,0 +1,19 @@
+theme = Github Dark
+title = " "
+macos-titlebar-proxy-icon = hidden
+cursor-style = block
+shell-integration-features = no-cursor
+cursor-style-blink = false
+background-opacity = 0.95
+unfocused-split-opacity = 0.2
+background-blur-radius = 15
+
+keybind = shift+ctrl+h=new_split:left
+keybind = shift+ctrl+j=new_split:down
+keybind = shift+ctrl+k=new_split:up
+keybind = shift+ctrl+l=new_split:right
+
+keybind = ctrl+y=goto_split:left
+keybind = ctrl+u=goto_split:bottom
+keybind = ctrl+i=goto_split:top
+keybind = ctrl+o=goto_split:right
