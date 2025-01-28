@@ -17,3 +17,6 @@ keybind = ctrl+y=goto_split:left
 keybind = ctrl+u=goto_split:bottom
 keybind = ctrl+i=goto_split:top
 keybind = ctrl+o=goto_split:right
+
+window-padding-x = 10
+window-padding-y = 10
