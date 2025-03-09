@@ -1,22 +1,43 @@
-theme = Github Dark
+theme = terafox_darker
 title = " "
+macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 cursor-style = block
 shell-integration-features = no-cursor
 cursor-style-blink = false
-background-opacity = 0.95
-unfocused-split-opacity = 0.2
-background-blur-radius = 15
-
-keybind = shift+ctrl+h=new_split:left
-keybind = shift+ctrl+j=new_split:down
-keybind = shift+ctrl+k=new_split:up
-keybind = shift+ctrl+l=new_split:right
-
-keybind = ctrl+y=goto_split:left
-keybind = ctrl+u=goto_split:bottom
-keybind = ctrl+i=goto_split:top
-keybind = ctrl+o=goto_split:right
+font-feature = -calt,-liga,-dlig
 
 window-padding-x = 10
 window-padding-y = 10
+
+
+# == KEYBINDS == #
+
+# General
+keybind = ctrl+a>r=reload_config
+keybind = ctrl+a>a=select_all
+keybind = ctrl+a>c=copy_to_clipboard
+keybind = ctrl+a>v=paste_from_clipboard
+
+
+# Tab and splits (panes)
+keybind = ctrl+a>t>n=new_tab
+keybind = ctrl+a>p>n=new_split:auto
+keybind = ctrl+a>p>r=new_split:right
+keybind = ctrl+a>p>l=new_split:left
+keybind = ctrl+a>p>u=new_split:up
+keybind = ctrl+a>p>d=new_split:down
+keybind = ctrl+a>p>f=toggle_split_zoom
+keybind = alt+7=resize_split:left,30
+keybind = alt+0=resize_split:right,30
+keybind = alt+9=resize_split:up,30
+keybind = alt+8=resize_split:down,30
+
+
+# -= Navigation =-
+keybind = alt+y=goto_split:left
+keybind = alt+u=goto_split:bottom
+keybind = alt+i=goto_split:top
+keybind = alt+o=goto_split:right
+keybind = alt+[=previous_tab
+keybind = alt+]=next_tab
