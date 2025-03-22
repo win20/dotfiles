@@ -19,15 +19,13 @@ setopt HIST_FIND_NO_DUPS
 
 ### ALIASES ###
 alias la="ls -la"
-
 alias v=nvim
 
 # Navigation
 alias repos="cd ~/Developer/repos"
-alias vconf="nvim ~/.config/nvim"
-alias zconf="nvim ~/.zshrc"
-alias wezconf="nvim ~/.config/wezterm/wezterm.lua"
-alias dot="nvim ~/Developer/repos/dotfiles"
+alias vconf="cd ~/Developer/repos/dotfiles/.config/nvim"
+alias zconf="nvim ~/Developer/repos/dotfiles/.zshrc"
+alias dot="cd ~/Developer/repos/dotfiles"
 
 # Git
 alias gs="git status"
