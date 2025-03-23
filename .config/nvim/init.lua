@@ -1,4 +1,5 @@
-require("core.options")
-require("plugin")
-require("core.keymaps")
-require("core.autocommands")
+require "core.options"
+require "plugin.lazy-bootstrap"
+require "plugin.lazy-plugins"
+require "core.keymaps"
+require "core.autocommands"
