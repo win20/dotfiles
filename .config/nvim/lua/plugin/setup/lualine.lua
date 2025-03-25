@@ -1,18 +1,27 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-
   config = function()
     local ayu_mirage = require "lualine.themes.ayu_mirage"
     ayu_mirage.normal.a.bg = "#000000"
     ayu_mirage.normal.b.bg = "#000000"
     ayu_mirage.normal.c.bg = "#000000"
 
+    ayu_mirage.normal.a.fg = "#5f8787"
+    ayu_mirage.normal.b.fg = "#c1c1c1"
+    ayu_mirage.normal.c.fg = "#c1c1c1"
+
     ayu_mirage.insert.a.bg = "#000000"
     ayu_mirage.insert.b.bg = "#000000"
 
+    ayu_mirage.insert.a.fg = "#5f81a5"
+    ayu_mirage.insert.b.fg = "#c1c1c1"
+
     ayu_mirage.visual.a.bg = "#000000"
     ayu_mirage.visual.b.bg = "#000000"
+
+    ayu_mirage.visual.a.fg = "#db6b96"
+    ayu_mirage.visual.b.fg = "#c1c1c1"
 
     require("lualine").setup {
       options = {
