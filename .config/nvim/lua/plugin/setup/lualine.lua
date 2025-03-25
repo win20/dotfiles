@@ -3,10 +3,21 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
 
   config = function()
+    local ayu_mirage = require "lualine.themes.ayu_mirage"
+    ayu_mirage.normal.a.bg = "#000000"
+    ayu_mirage.normal.b.bg = "#000000"
+    ayu_mirage.normal.c.bg = "#000000"
+
+    ayu_mirage.insert.a.bg = "#000000"
+    ayu_mirage.insert.b.bg = "#000000"
+
+    ayu_mirage.visual.a.bg = "#000000"
+    ayu_mirage.visual.b.bg = "#000000"
+
     require("lualine").setup {
       options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = ayu_mirage,
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
         disabled_filetypes = {
