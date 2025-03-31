@@ -37,11 +37,8 @@ alias gb="git checkout -b"
 alias lg="lazygit"
 
 # Zellij
+alias zz="zellij"
 alias zn="zellij attach --create"
-alias za="zellij attach"
-alias zls="zellij list-sessions"
-alias zka="zellij kill-all-sessions"
-alias zk="zellij kill-sessions"
 
 # Plugins
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

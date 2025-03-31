@@ -1,0 +1,23 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode} #[fg=#949494,bold]{session}"
+                format_center "{tabs}"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"
+                border_position "top"
+
+                mode_normal  "#[bg=#6b6b6b]  "
+                mode_tmux    "#[bg=#c9c9c9]  "
+
+                tab_normal   "#[fg=#6b6b6b] {name} "
+                tab_active   "#[fg=#949494,bold] {name} "
+            }
+        }
+    }
+}
