@@ -18,4 +18,20 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
+
+  {
+    "imsnif/kdl.vim",
+    ft = { "kdl" },
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent = {
+        char = "┊",
+      },
+      scope = { enabled = false },
+    },
+  },
 }
