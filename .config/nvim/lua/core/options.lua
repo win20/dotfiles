@@ -36,11 +36,20 @@ vim.opt.timeoutlen = 500
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { trail = "·", nbsp = "␣" }
+vim.opt.listchars = {
+  trail = "·",
+  nbsp = "␣",
+  tab = "  ",
+}
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -55,3 +64,4 @@ vim.opt.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.opt.confirm = true
+vim.opt.wrap = false

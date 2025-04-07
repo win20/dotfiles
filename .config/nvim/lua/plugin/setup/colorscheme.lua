@@ -24,7 +24,6 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    -- local colorscheme = colorschemes.black_metal_dark_funeral
     require("base16-colorscheme").setup(colorschemes.black_metal_dark_funeral)
   end,
 }

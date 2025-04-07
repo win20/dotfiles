@@ -2,16 +2,6 @@ return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
-  keys = {
-    {
-      "<leader>fm",
-      function()
-        require("conform").format { async = true, lsp_format = "fallback" }
-      end,
-      mode = "",
-      desc = "[F]ormat buffer",
-    },
-  },
 
   config = function()
     local conform = require "conform"
@@ -45,6 +35,6 @@ return {
 
     vim.keymap.set("n", "<leader>fm", function()
       conform.format { async = true, lsp_format = "fallback" }
-    end)
+    end, { desc = "Format buffer" })
   end,
 }
