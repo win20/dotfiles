@@ -11,6 +11,8 @@ return {
       },
       keymaps = {
         ["q"] = "actions.close",
+        ["-"] = { "actions.parent", mode = "n" },
+        ["_"] = { "actions.open_cwd", mode = "n" },
       },
     }
   end,
