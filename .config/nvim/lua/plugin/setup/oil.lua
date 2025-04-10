@@ -15,5 +15,7 @@ return {
         ["_"] = { "actions.open_cwd", mode = "n" },
       },
     }
+
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open directory in Oil" })
   end,
 }
