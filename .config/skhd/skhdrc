@@ -1,5 +1,0 @@
-# Open terminal
-ctrl - z : open -a 'Wezterm'
-
-# Open browser
-ctrl - x : open -a 'Zen Browser'
