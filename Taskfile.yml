@@ -1,0 +1,57 @@
+version: '3'
+
+vars:
+  DOTFILES_DIR: '{{.USER_WORKING_DIR}}'
+  HOME_DIR: '{{.HOME}}'
+
+tasks:
+  ln-wezterm:
+    desc: Symlink WezTerm configuration
+    cmds:
+      - mkdir -p {{.HOME_DIR}}/.config
+      - ln -svf {{.DOTFILES_DIR}}/.config/wezterm {{.HOME_DIR}}/.config/wezterm
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.config/wezterm)" = "{{.DOTFILES_DIR}}/.config/wezterm"
+
+  ln-nvim:
+    desc: Symlink Neovim configuration
+    cmds:
+      - mkdir -p {{.HOME_DIR}}/.config
+      - ln -svf {{.DOTFILES_DIR}}/.config/nvim {{.HOME_DIR}}/.config/nvim
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.config/nvim)" = "{{.DOTFILES_DIR}}/.config/nvim"
+
+  ln-zshrc:
+    desc: Symlink ZSH configuration
+    cmds:
+      - ln -svf {{.DOTFILES_DIR}}/.zshrc {{.HOME_DIR}}/.zshrc
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.zshrc)" = "{{.DOTFILES_DIR}}/.zshrc"
+
+  ln-ideavimrc:
+    desc: Symlink ideavim configuration (InteliJ Vim mode)
+    cmds:
+      - ln -svf {{.DOTFILES_DIR}}/.ideavimrc {{.HOME_DIR}}/.ideavimrc
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.ideavimrc)" = "{{.DOTFILES_DIR}}/.ideavimrc"
+
+  ln-all:
+    desc: Symlink all configurations defined in this Taskfile
+    deps:
+      - link-wezterm
+      - link-nvim
+      - link-zshrc
+      - link-ideavimrc
+
+  zsh-plugins:
+    desc: Pull ZSH plugins from brew
+    cmds:
+      - brew install zsh-autosuggestions
+      - brew install zsh-syntax-highlighting
+
+  default:
+    desc: Needs a specific task to be passed in
+    cmds:
+      - echo "Please specify a task to run. Use 'task --list' to see available tasks."
+    silent: true
+
