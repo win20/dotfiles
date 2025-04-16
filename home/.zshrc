@@ -39,6 +39,7 @@ alias lg="lazygit"
 # Zellij
 alias zz="zellij"
 alias zn="zellij attach --create"
+alias zel="~/Developer/repos/dotfiles/scripts/zellij_sessionizer.sh"
 
 # Plugins
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
