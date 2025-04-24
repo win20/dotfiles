@@ -14,6 +14,7 @@ return {
         return "make install_jsregexp"
       end)(),
       dependencies = {},
+      ft = { "lua" },
     },
     "saadparwaiz1/cmp_luasnip",
 
