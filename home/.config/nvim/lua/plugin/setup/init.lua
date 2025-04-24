@@ -23,4 +23,8 @@ return {
     "imsnif/kdl.vim",
     ft = { "kdl" },
   },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
 }
