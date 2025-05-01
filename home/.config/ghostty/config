@@ -7,6 +7,10 @@ shell-integration-features = no-cursor
 cursor-style-blink = false
 font-feature = -calt,-liga,-dlig
 
+window-position-x = 100
+window-position-y = 50
+window-width = 215
+window-height = 60
 window-padding-x = 10
 window-padding-y = 10
 
