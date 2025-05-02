@@ -67,6 +67,22 @@ return {
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set("n", "<leader>fn", function()
       builtin.find_files { cwd = vim.fn.stdpath "config" }
-    end, { desc = "[S]earch [N]eovim files" })
+    end, { desc = "Search neovim files" })
+
+    vim.keymap.set("n", "<leader>FF", function()
+      local current_path = vim.fn.expand "%:p:h"
+      local cleaned_path = current_path:gsub("^oil://", "")
+      vim.notify("Current working directory: " .. cleaned_path)
+
+      builtin.find_files { search_dirs = { cleaned_path } }
+    end, { desc = "Search files within a directory" })
+
+    vim.keymap.set("n", "<leader>FS", function()
+      local current_path = vim.fn.expand "%:p:h"
+      local cleaned_path = current_path:gsub("^oil://", "")
+      vim.notify("Current working directory: " .. cleaned_path)
+
+      builtin.live_grep { search_dirs = { cleaned_path } }
+    end, { desc = "Live grep within a directory" })
   end,
 }
