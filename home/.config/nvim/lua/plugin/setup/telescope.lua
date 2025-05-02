@@ -84,5 +84,32 @@ return {
 
       builtin.live_grep { search_dirs = { cleaned_path } }
     end, { desc = "Live grep within a directory" })
+
+    -- TODO: clean this up, DRY
+    vim.keymap.set("n", "<leader>DD", function()
+      local dir_name = vim.fn.input "Directory to search: "
+      if dir_name == "" then
+        vim.notify("No directory entered.", vim.log.levels.WARN)
+        return
+      end
+
+      local matches = vim.fn.glob(dir_name, false, true)
+      if #matches == 0 then
+        matches = vim.fn.glob("**/" .. dir_name, false, true)
+      end
+
+      if #matches == 0 then
+        vim.notify("Directory not found: " .. dir_name, vim.log.levels.ERROR)
+        return
+      end
+
+      local dir_path = matches[1]
+      if vim.fn.isdirectory(dir_path) == 0 then
+        vim.notify("Not a directory: " .. dir_path, vim.log.levels.ERROR)
+        return
+      end
+
+      builtin.find_files { search_dirs = { dir_path } }
+    end, { desc = "Live grep within an input directory" })
   end,
 }
