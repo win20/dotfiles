@@ -1,3 +1,36 @@
+local function get_current_directory()
+  local current_path = vim.fn.expand "%:p:h"
+  local cleaned_path = current_path:gsub("^oil://", "")
+
+  return cleaned_path
+end
+
+local function find_input_directory()
+  local dir_name = vim.fn.input "Directory to search: "
+  if dir_name == "" then
+    vim.notify("No directory entered.", vim.log.levels.WARN)
+    return
+  end
+
+  local matches = vim.fn.glob(dir_name, false, true)
+  if #matches == 0 then
+    matches = vim.fn.glob("**/" .. dir_name, false, true)
+  end
+
+  if #matches == 0 then
+    vim.notify("Directory not found: " .. dir_name, vim.log.levels.ERROR)
+    return
+  end
+
+  local dir_path = matches[1]
+  if vim.fn.isdirectory(dir_path) == 0 then
+    vim.notify("Not a directory: " .. dir_path, vim.log.levels.ERROR)
+    return
+  end
+
+  return dir_path
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   event = "VimEnter",
@@ -64,51 +97,31 @@ return {
       })
     end, { desc = "[/] Fuzzily search in current buffer" })
 
-    -- Shortcut for searching your Neovim configuration files
     vim.keymap.set("n", "<leader>fn", function()
       builtin.find_files { cwd = vim.fn.stdpath "config" }
     end, { desc = "Search neovim files" })
 
     vim.keymap.set("n", "<leader>FF", function()
-      local current_path = vim.fn.expand "%:p:h"
-      local cleaned_path = current_path:gsub("^oil://", "")
+      local cleaned_path = get_current_directory()
       vim.notify("Current working directory: " .. cleaned_path)
 
       builtin.find_files { search_dirs = { cleaned_path } }
     end, { desc = "Search files within a directory" })
 
     vim.keymap.set("n", "<leader>FS", function()
-      local current_path = vim.fn.expand "%:p:h"
-      local cleaned_path = current_path:gsub("^oil://", "")
+      local cleaned_path = get_current_directory()
       vim.notify("Current working directory: " .. cleaned_path)
 
       builtin.live_grep { search_dirs = { cleaned_path } }
     end, { desc = "Live grep within a directory" })
 
-    -- TODO: clean this up, DRY
     vim.keymap.set("n", "<leader>DD", function()
-      local dir_name = vim.fn.input "Directory to search: "
-      if dir_name == "" then
-        vim.notify("No directory entered.", vim.log.levels.WARN)
-        return
-      end
+      local dir_path = find_input_directory()
+      builtin.find_files { search_dirs = { dir_path } }
+    end, { desc = "Find files within an input directory" })
 
-      local matches = vim.fn.glob(dir_name, false, true)
-      if #matches == 0 then
-        matches = vim.fn.glob("**/" .. dir_name, false, true)
-      end
-
-      if #matches == 0 then
-        vim.notify("Directory not found: " .. dir_name, vim.log.levels.ERROR)
-        return
-      end
-
-      local dir_path = matches[1]
-      if vim.fn.isdirectory(dir_path) == 0 then
-        vim.notify("Not a directory: " .. dir_path, vim.log.levels.ERROR)
-        return
-      end
-
+    vim.keymap.set("n", "<leader>DS", function()
+      local dir_path = find_input_directory()
       builtin.find_files { search_dirs = { dir_path } }
     end, { desc = "Live grep within an input directory" })
   end,
