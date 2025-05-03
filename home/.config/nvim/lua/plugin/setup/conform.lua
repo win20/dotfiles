@@ -36,6 +36,6 @@ return {
 
     vim.keymap.set("n", "<leader>fm", function()
       conform.format { async = true, lsp_format = "fallback" }
-    end, { desc = "Format buffer" })
+    end, { desc = "conform: format buffer" })
   end,
 }

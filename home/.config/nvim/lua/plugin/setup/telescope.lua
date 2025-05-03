@@ -78,20 +78,20 @@ return {
     pcall(telescope.load_extension, "ui-select")
 
     -- Keymaps
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-    vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
-    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Telescope buffers" })
-    vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope recent files" })
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help" })
-    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Search keymaps" })
-    vim.keymap.set("n", "<leader>fb", builtin.builtin, { desc = "Search select telescope" })
-    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Search current word" })
-    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
-    vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "Search git modified files" })
-    vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "Search git branches" })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "telescope: find files" })
+    vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "telescope: live grep" })
+    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "telescope: open buffers" })
+    vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "telescope: recent files" })
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "telescope: help" })
+    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "telescope: keymaps" })
+    vim.keymap.set("n", "<leader>fb", builtin.builtin, { desc = "telescope: pickers" })
+    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "telescope: current word" })
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "telescope: diagnostics" })
+    vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "telescope: git modified files" })
+    vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "telescope: git branches" })
     vim.keymap.set("n", "<leader>f/", function()
       builtin.lsp_document_symbols { symbols = { "Function", "Method" } }
-    end, { desc = "Telescope: Find functions and methods in current buffer" })
+    end, { desc = "telescope: symbols in current buffer" })
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -99,34 +99,34 @@ return {
         winblend = 10,
         previewer = false,
       })
-    end, { desc = "[/] Fuzzily search in current buffer" })
+    end, { desc = "telescope: fzf in current buffer" })
 
     vim.keymap.set("n", "<leader>fn", function()
       builtin.find_files { cwd = vim.fn.stdpath "config" }
-    end, { desc = "Search neovim files" })
+    end, { desc = "telescope: neovim files" })
 
     vim.keymap.set("n", "<leader>FF", function()
       local cleaned_path = get_current_directory()
       vim.notify("Current working directory: " .. cleaned_path)
 
       builtin.find_files { search_dirs = { cleaned_path } }
-    end, { desc = "Search files within a directory" })
+    end, { desc = "telescope: files within a directory" })
 
     vim.keymap.set("n", "<leader>FS", function()
       local cleaned_path = get_current_directory()
       vim.notify("Current working directory: " .. cleaned_path)
 
       builtin.live_grep { search_dirs = { cleaned_path } }
-    end, { desc = "Live grep within a directory" })
+    end, { desc = "telescope: grep within a directory" })
 
     vim.keymap.set("n", "<leader>DD", function()
       local dir_path = find_input_directory()
       builtin.find_files { search_dirs = { dir_path } }
-    end, { desc = "Find files within an input directory" })
+    end, { desc = "telescope: files within an input directory" })
 
     vim.keymap.set("n", "<leader>DS", function()
       local dir_path = find_input_directory()
       builtin.find_files { search_dirs = { dir_path } }
-    end, { desc = "Live grep within an input directory" })
+    end, { desc = "telescope: grep within an input directory" })
   end,
 }
