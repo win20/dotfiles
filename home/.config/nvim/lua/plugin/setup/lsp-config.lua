@@ -20,16 +20,16 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-        map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-        map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-        map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-        map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-        map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-        map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-        map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
-        map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-        map("<leader>dt", ToggleDiagnosticsVirtualText, "Toggle diagnostics virtual line display")
+        map("gd", require("telescope.builtin").lsp_definitions, "lsp: goto definition")
+        map("gr", require("telescope.builtin").lsp_references, "lsp: goto references")
+        map("gI", require("telescope.builtin").lsp_implementations, "lsp: goto implementation")
+        map("<leader>D", require("telescope.builtin").lsp_type_definitions, "lsp: type definition")
+        map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "lsp: document symbols")
+        map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "lsp: workspace symbols")
+        map("<leader>rn", vim.lsp.buf.rename, "lsp: rename")
+        map("<leader>ca", vim.lsp.buf.code_action, "lsp: code action", { "n", "x" })
+        map("gD", vim.lsp.buf.declaration, "lsp: goto declaration")
+        map("<leader>dt", ToggleDiagnosticsVirtualText, "lsp: toggle diagnostics virtual linen")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client any

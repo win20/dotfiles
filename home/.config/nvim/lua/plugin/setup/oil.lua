@@ -16,6 +16,6 @@ return {
       },
     }
 
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open directory in Oil" })
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "oil: open directory" })
   end,
 }

@@ -58,9 +58,6 @@ return {
         bufmap("n", "<leader>hD", function()
           gitsigns.diffthis "@"
         end, { desc = "gitsigns: diff against last commit" })
-        -- Toggles
-        bufmap("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "gitsigns: toggle git show blame line" })
-        bufmap("n", "<leader>tD", gitsigns.preview_hunk_inline, { desc = "gitsigns: toggle git show deleted" })
       end,
     },
   },
