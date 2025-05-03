@@ -29,6 +29,7 @@ return {
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
         map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("<leader>dt", ToggleDiagnosticsVirtualText, "Toggle diagnostics virtual line display")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client any
