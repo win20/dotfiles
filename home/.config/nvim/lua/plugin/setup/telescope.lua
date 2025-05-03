@@ -56,6 +56,7 @@ return {
 
     telescope.setup {
       defaults = {
+        border = true,
         mappings = {
           i = {
             ["<c-enter>"] = "to_fuzzy_refine",
