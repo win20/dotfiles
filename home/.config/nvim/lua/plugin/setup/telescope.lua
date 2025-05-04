@@ -90,7 +90,7 @@ return {
     vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "telescope: git modified files" })
     vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "telescope: git branches" })
     vim.keymap.set("n", "<leader>f/", function()
-      builtin.lsp_document_symbols { symbols = { "Function", "Method" } }
+      builtin.lsp_document_symbols { symbols = { "Function", "Method", "Constant" } }
     end, { desc = "telescope: symbols in current buffer" })
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set("n", "<leader>/", function()
