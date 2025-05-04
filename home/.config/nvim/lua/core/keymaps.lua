@@ -17,6 +17,3 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "core: move focus to the lef
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "core: move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "core: move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "core: move focus to the upper window" })
-
--- Oil --
--- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent folder with oil.nvim" })
