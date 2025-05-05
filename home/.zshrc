@@ -26,6 +26,7 @@ alias repos="cd ~/Developer/repos"
 alias vconf="cd ~/Developer/repos/dotfiles/.config/nvim"
 alias zconf="nvim ~/Developer/repos/dotfiles/.zshrc"
 alias dot="cd ~/Developer/repos/dotfiles"
+alias cdr=". ~/Developer/repos/dotfiles/scripts/cd_repo.sh"
 
 # Git
 alias gs="git status"
