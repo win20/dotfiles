@@ -68,6 +68,6 @@ return {
         vim.cmd "FormatDisable!"
         vim.notify "Disabled autoformat for current buffer"
       end
-    end, { desc = "Toggle autoformat for current buffer" })
+    end, { desc = "conform: toggle autoformat for current buffer" })
   end,
 }
