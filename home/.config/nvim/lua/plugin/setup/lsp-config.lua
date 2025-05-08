@@ -1,3 +1,26 @@
+local function filter_location_list()
+  local pattern = vim.fn.input "Pattern to exclude: "
+  if pattern == "" then
+    vim.notify("No pattern entered.", vim.log.levels.WARN)
+    return
+  end
+
+  vim.diagnostic.setloclist()
+  local loc_list = vim.fn.getloclist(0)
+  local filtered_list = {}
+
+  for _, item in ipairs(loc_list) do
+    local text = item.text or ""
+    if not text:match(pattern) then
+      table.insert(filtered_list, item)
+    end
+  end
+
+  vim.fn.setloclist(0, filtered_list)
+  vim.notify("Filtered quickfix list, removed items matching: " .. pattern, vim.log.levels.ERROR)
+  vim.cmd "lopen"
+end
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -30,6 +53,8 @@ return {
         map("<leader>ca", vim.lsp.buf.code_action, "lsp: code action", { "n", "x" })
         map("gD", vim.lsp.buf.declaration, "lsp: goto declaration")
         map("<leader>dt", ToggleDiagnosticsVirtualText, "lsp: toggle diagnostics virtual linen")
+        map("<leader>lf", filter_location_list, "lsp: filter location list")
+        map("<leader>lo", vim.diagnostic.setloclist, "lsp: open location list with diagnostics")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client any

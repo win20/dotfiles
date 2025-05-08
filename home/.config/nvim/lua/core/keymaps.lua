@@ -6,9 +6,8 @@
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "core: open quickfix list" })
 vim.keymap.set("n", "<leader>s", ":wa<CR>", { desc = "core: write to all open buffers" })
-vim.keymap.set("n", "<leader>Q", ":q!<CR>", { desc = "core: quit without saving" })
+vim.keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "core: quit without saving" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "core: clear search highlights" })
-vim.keymap.set("n", "<leader>qf", vim.diagnostic.setloclist, { desc = "core: open quickfix list" })
 
 -- Splits
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "core: horizontal split" })

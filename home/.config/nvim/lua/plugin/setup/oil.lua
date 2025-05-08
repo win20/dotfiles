@@ -19,7 +19,7 @@ return {
 
     vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "oil: open directory" })
 
-    vim.keymap.set("n", "<leader>qq", function()
+    vim.keymap.set("n", "<leader>qo", function()
       vim.cmd "bd"
       oil.open(vim.fn.getcwd())
     end)
