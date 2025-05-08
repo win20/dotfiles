@@ -2,7 +2,8 @@ return {
   "stevearc/oil.nvim",
   dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
   config = function()
-    require("oil").setup {
+    local oil = require "oil"
+    oil.setup {
       view_options = {
         show_hidden = true,
         is_always_hidden = function(name, bufnr)
@@ -17,5 +18,10 @@ return {
     }
 
     vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "oil: open directory" })
+
+    vim.keymap.set("n", "<leader>qq", function()
+      vim.cmd "bd"
+      oil.open(vim.fn.getcwd())
+    end)
   end,
 }
