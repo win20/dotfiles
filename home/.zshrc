@@ -23,8 +23,8 @@ alias v=nvim
 
 # Navigation
 alias repos="cd ~/Developer/repos"
-alias vconf="cd ~/Developer/repos/dotfiles/.config/nvim"
-alias zconf="nvim ~/Developer/repos/dotfiles/.zshrc"
+alias vconf="cd ~/Developer/repos/dotfiles/home/.config/nvim"
+alias zconf="nvim ~/Developer/repos/dotfiles/home/.zshrc"
 alias dot="cd ~/Developer/repos/dotfiles"
 alias cdr=". ~/Developer/repos/dotfiles/scripts/cd_repo.sh"
 
