@@ -12,12 +12,18 @@ return {
       harpoon:list():add()
     end, { desc = "harpoon: add mark" })
 
+    vim.keymap.set("n", "<leader>mo", function()
+      vim.cmd "Telescope harpoon marks"
+    end, { desc = "harpoon: open marks list in telescope" })
+
     vim.keymap.set("n", "<leader>mm", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end, { desc = "harpoon: open menu" })
+    end, { desc = "harpoon: open marks list" })
+
     vim.keymap.set("n", "<leader>j", function()
       harpoon:list():prev()
     end, { desc = "harpoon: previous file" })
+
     vim.keymap.set("n", "<leader>k", function()
       harpoon:list():next()
     end, { desc = "harpoon: next file" })

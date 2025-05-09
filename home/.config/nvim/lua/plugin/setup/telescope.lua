@@ -76,6 +76,7 @@ return {
     -- Load extensions
     pcall(telescope.load_extension, "fzf")
     pcall(telescope.load_extension, "ui-select")
+    pcall(telescope.load_extension, "harpoon")
 
     -- Keymaps
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "telescope: find files" })
