@@ -21,6 +21,12 @@ local function filter_location_list()
   vim.cmd "lopen"
 end
 
+local diagnostics_virtual_text = true
+local function toggle_diagnostice_virtual_lines()
+  diagnostics_virtual_text = not diagnostics_virtual_text
+  vim.diagnostic.config { virtual_text = diagnostics_virtual_text }
+end
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -52,9 +58,9 @@ return {
         map("<leader>rn", vim.lsp.buf.rename, "lsp: rename")
         map("<leader>ca", vim.lsp.buf.code_action, "lsp: code action", { "n", "x" })
         map("gD", vim.lsp.buf.declaration, "lsp: goto declaration")
-        map("<leader>dt", ToggleDiagnosticsVirtualText, "lsp: toggle diagnostics virtual linen")
-        map("<leader>lf", filter_location_list, "lsp: filter location list")
-        map("<leader>lo", vim.diagnostic.setloclist, "lsp: open location list with diagnostics")
+        map("<leader>dt", toggle_diagnostice_virtual_lines, "lsp: toggle diagnostics virtual line")
+        map("<leader>df", filter_location_list, "lsp: filter location list")
+        map("<leader>do", vim.diagnostic.setloclist, "lsp: open location list with diagnostics")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client any

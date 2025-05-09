@@ -16,9 +16,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.cmd [[
   highlight TelescopeBorder guifg=#5f8787 guibg=NONE
 ]]
-
-local diagnostics_virtual_text = true
-function ToggleDiagnosticsVirtualText()
-  diagnostics_virtual_text = not diagnostics_virtual_text
-  vim.diagnostic.config { virtual_text = diagnostics_virtual_text }
-end
