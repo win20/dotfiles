@@ -27,4 +27,22 @@ return {
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
+
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>to",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "trouble: buffer diagnostics",
+      },
+      {
+        "<leader>t/",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "trouble: buffer symbols",
+      },
+    },
+  },
 }
