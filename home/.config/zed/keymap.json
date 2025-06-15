@@ -1,3 +1,10 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
 [
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
@@ -8,20 +15,19 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      // put key-bindings here if you want them to work only in normal mode
-      // "down": ["workspace::SendKeystrokes", "4 j"]
-      // "up": ["workspace::SendKeystrokes", "4 k"]
       "space s": "workspace::SaveAll",
-      "space j": "pane::ActivatePrevItem",
+      "space j": "pane::ActivatePreviousItem",
       "space k": "pane::ActivateNextItem",
       "space f s": "workspace::NewSearch",
       "space f f": "file_finder::Toggle",
       "space q": "pane::CloseActiveItem",
       "space t t": "workspace::NewTerminal",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-w /": "pane::SplitRight",
+      "ctrl-w -": "pane::SplitDown"
     }
   },
   {
@@ -47,10 +53,10 @@
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
 
@@ -58,7 +64,7 @@
     "bindings": {
       // navigation within UI menus
       "ctrl-j": "menu::SelectNext",
-      "ctrl-k": "menu::SelectPrev",
+      "ctrl-k": "menu::SelectPrevious",
       "alt-f12": "terminal_panel::ToggleFocus"
     }
   },
@@ -67,7 +73,7 @@
     "bindings": {
       // navigation within code suggestions
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrev"
+      "ctrl-k": "editor::ContextMenuPrevious"
     }
   }
 ]
