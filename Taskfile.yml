@@ -1,8 +1,8 @@
-version: '3'
+version: "3"
 
 vars:
-  DOTFILES_DIR: '{{.USER_WORKING_DIR}}'
-  HOME_DIR: '{{.HOME}}'
+  DOTFILES_DIR: "{{.USER_WORKING_DIR}}"
+  HOME_DIR: "{{.HOME}}"
 
 tasks:
   ln-wezterm:
@@ -49,6 +49,14 @@ tasks:
     status:
       - test "$(readlink {{.HOME_DIR}}/.config/ghostty)" = "{{.DOTFILES_DIR}}/home/.config/ghostty"
 
+  ln-zed:
+    desc: Symlink Zed configuration files
+    cmds:
+      - ln -svf {{.DOTFILES_DIR}}/home/.config/zed/settings.json {{.HOME_DIR}}/.config/zed/settings.json
+      - ln -svf {{.DOTFILES_DIR}}/home/.config/zed/keymap.json {{.HOME_DIR}}/.config/zed/keymap.json
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.config/zed)" = "{{.DOTFILES_DIR}}/home/.config/zed"
+
   ln-all:
     desc: Symlink all configurations defined in this Taskfile
     deps:
@@ -70,4 +78,3 @@ tasks:
     cmds:
       - echo "Please specify a task to run. Use 'task --list' to see available tasks."
     silent: true
-
