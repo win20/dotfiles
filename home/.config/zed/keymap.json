@@ -27,7 +27,10 @@
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-w /": "pane::SplitRight",
-      "ctrl-w -": "pane::SplitDown"
+      "ctrl-w -": "pane::SplitDown",
+      "space e": "workspace::ToggleLeftDock",
+      "space a": "workspace::ToggleRightDock",
+      "space t": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -74,6 +77,14 @@
       // navigation within code suggestions
       "ctrl-j": "editor::ContextMenuNext",
       "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "use_key_equivalents": true,
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "o": "project_panel::Open"
     }
   }
 ]

@@ -7,13 +7,40 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
+  // General
+  "base_keymap": "JetBrains",
   "vim_mode": true,
   "relative_line_numbers": true,
   "cursor_blink": false,
   "tab_size": 2,
-  "base_keymap": "JetBrains",
+  "show_whitespaces": "trailing",
+  "show_wrap_guides": true,
+  "wrap_guides": [120],
+  "preview_tabs": {
+    "enabled": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+
+  // Appearance
+  "theme": "Github Dark Dimmed",
+  "ui_font_family": "Monaspace Neon",
+  "ui_font_fallbacks": ["JetBrains Mono"],
+  "buffer_font_family": "Monaspace Neon",
+  "buffer_font_fallbacks": ["JetBrains Mono"],
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+
+  // Language specific
   "file_types": {
     "YAML": ["yml"]
   },
@@ -31,17 +58,36 @@
       "tab_size": 4
     }
   },
-  "terminal": {
-    "shell": {
-      "program": "/bin/zsh"
+
+  // AI
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
+    "model_parameters": [],
+    "default_profile": "write",
+    "version": "2"
+  },
+
+  // Misc
+  "terminal": {
+    "shell": "system",
     "toolbar": {
       "breadcrumbs": false
     }
   },
   "git": {
+    "git_gutter": "tracked_files",
     "inline_blame": {
       "enabled": false
     }
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
   }
 }
