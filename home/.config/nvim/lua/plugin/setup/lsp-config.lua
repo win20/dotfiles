@@ -214,6 +214,25 @@ return {
       },
 
       emmet_language_server = {},
+
+      yamlls = {
+        settings = {
+          yaml = {
+            validate = true,
+            hover = true,
+            completion = true,
+            schemas = {
+              ["https://json.schemastore.org/kubernetes.json"] = "/*.k8s.yaml",
+            },
+            schemaStore = {
+              enable = true,
+              url = "https://www.schemastore.org/api/json/catalog.json",
+            },
+            keyOrdering = false,
+          },
+        },
+        filetypes = { "yaml", "yml" },
+      },
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
