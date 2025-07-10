@@ -6,7 +6,7 @@ vars:
 
 tasks:
   cp-zshrc:
-    desc: Copy ZSH configuration to home directory
+    desc: Copy ZSH configuration to home directory (for work laptop)
     cmds:
       - cp {{.DOTFILES_DIR}}/home/.zshrc {{.HOME_DIR}}/.zshrc
     status:
