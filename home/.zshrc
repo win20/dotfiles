@@ -1,34 +1,89 @@
-# ZSH HOME
-export ZSH=$HOME/.zsh
+# ==== VARIABLES & PATHS ====
+export IS_WORK_LAPTOP=0
 
-# HISTORY CONFIG
-export HISTFILE=$ZSH/.zsh_history
-
-# How many commands zsh will load to memory.
+export ZSH="$HOME/.zsh"
+export HISTFILE="$ZSH/.zsh_history"
 export HISTSIZE=10000
-
-# How many commands history will save on file.
 export SAVEHIST=10000
-
-# History won't save duplicates.
 setopt HIST_IGNORE_ALL_DUPS
-
-# History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
 
+export PATH="$HOMEBREW_PREFIX/opt/make/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
+export PATH="/usr/local/bin/python2:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
-### ALIASES ###
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export GPG_TTY=$(tty)
+
+# ==== VERSION MANAGERS ====
+export NVM_DIR="$HOME/.nvm"
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  . "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+fi
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Set searchable dirs for fcd()
+SEARCHEABLE_DIRS=(~/Developer/winbarua/ ~/Developer/haerd/)
+
+# ==== WORK SPECIFIC ====
+if [[ "$IS_WORK_LAPTOP" == "1" ]]; then
+  export PATH="$HOME/Cushon/site/smarter-cli/bin:$PATH"
+  export AWS_PROFILE=win.barua.test
+  export EVINCED_PACKAGE_TOKEN=secret
+
+  alias cc="cd ~/Cushon"
+  alias site="cd ~/Cushon/site"
+  alias app="cd ~/Cushon/app"
+  alias els="cd ~/Cushon/employer-lead-service"
+  alias mfa=". ~/.aws/mfa.sh"
+
+  # SSH Key Management
+  for KEY in ~/.ssh/Keys/*; do
+    ssh-add -l | grep -q $(ssh-keygen -lf "$KEY" | awk '{print $2}') || \
+      ssh-add --apple-use-keychain "$KEY"
+  done
+
+  SEARCHEABLE_DIRS=(~/Developer/cushon/)
+fi
+
+# ==== CUSTOM FUNCTIONS ====
+
+# fcd - fuzzy cd into selected repos
+fcd() {
+  local selected_dir
+  selected_dir=$(find "${SEARCHABLE_DIRS[@]}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | fzf)
+  if [[ -n "$selected_dir" ]]; then
+    cd "$selected_dir"
+  else
+    echo "No directory selected."
+  fi
+}
+
+# ==== SHARED ALIASES ====
 alias la="ls -la"
-alias v=nvim
-
-# Navigation
+alias v="nvim"
 alias repos="cd ~/Developer/repos"
-alias vconf="cd ~/Developer/repos/dotfiles/home/.config/nvim"
-alias zconf="nvim ~/Developer/repos/dotfiles/home/.zshrc"
 alias dot="cd ~/Developer/repos/dotfiles"
 alias cdr=". ~/Developer/repos/dotfiles/scripts/cd_repo.sh"
-
-# Git
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
@@ -36,30 +91,28 @@ alias gd="git pull"
 alias gu="git push"
 alias gb="git checkout -b"
 alias lg="lazygit"
-
-# Zellij
 alias zz="zellij"
 alias zn="zellij attach --create"
 alias zel="~/Developer/repos/dotfiles/scripts/zellij_sessionizer.sh"
+alias vconf="nvim ~/.config/nvim"
+alias zconf="nvim ~/.zshrc"
 
-# Plugins
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ==== PLUGINS ====
+if command -v brew >/dev/null 2>&1; then
+  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+else
+  [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-# Pure prompt
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# ==== CUSTOM PROMPT ====
+if [ -d "$HOME/.zsh/pure" ]; then
+  fpath+=("$HOME/.zsh/pure")
+else
+  fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
 autoload -U promptinit; promptinit
 prompt pure
-
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/Users/winbarua/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
