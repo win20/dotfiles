@@ -5,6 +5,13 @@ vars:
   HOME_DIR: "{{.HOME}}"
 
 tasks:
+  cp-zshrc:
+    desc: Copy ZSH configuration to home directory
+    cmds:
+      - cp {{.DOTFILES_DIR}}/home/.zshrc {{.HOME_DIR}}/.zshrc
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.zshrc)" = "{{.DOTFILES_DIR}}/home/.zshrc"
+
   ln-wezterm:
     desc: Symlink WezTerm configuration
     cmds:
