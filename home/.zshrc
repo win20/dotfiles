@@ -1,5 +1,5 @@
 # ==== VARIABLES & PATHS ====
-export IS_WORK_LAPTOP=0
+export IS_WORK_LAPTOP=1
 
 export ZSH="$HOME/.zsh"
 export HISTFILE="$ZSH/.zsh_history"
@@ -8,21 +8,36 @@ export SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
-export PATH="$HOMEBREW_PREFIX/opt/make/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/bin:$PATH"
-export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
-export PATH="/usr/local/bin/python2:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
+# Build PATH systematically - order matters (most specific first)
+# Work-specific paths first
+if [[ "$IS_WORK_LAPTOP" == "1" ]]; then
+  export PATH="$HOME/Cushon/site/smarter-cli/bin:$PATH"
+fi
+
+# User-specific tool paths
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+
+# Language-specific paths
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
 
+# PNPM setup
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# Homebrew paths
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
+# System Python (keep this after homebrew to prefer homebrew python)
+export PATH="/usr/local/bin/python2:$PATH"
 
 export GPG_TTY=$(tty)
 
@@ -42,11 +57,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Set searchable dirs for fcd()
-SEARCHEABLE_DIRS=(~/Developer/winbarua/ ~/Developer/haerd/)
+SEARCHABLE_DIRS=(~/Developer/winbarua/ ~/Developer/haerd/)
 
 # ==== WORK SPECIFIC ====
 if [[ "$IS_WORK_LAPTOP" == "1" ]]; then
-  export PATH="$HOME/Cushon/site/smarter-cli/bin:$PATH"
   export AWS_PROFILE=win.barua.test
   export EVINCED_PACKAGE_TOKEN=secret
 
@@ -62,12 +76,10 @@ if [[ "$IS_WORK_LAPTOP" == "1" ]]; then
       ssh-add --apple-use-keychain "$KEY"
   done
 
-  SEARCHEABLE_DIRS=(~/Developer/cushon/)
+  SEARCHABLE_DIRS=(~/Developer/cushon/)
 fi
 
 # ==== CUSTOM FUNCTIONS ====
-
-# fcd - fuzzy cd into selected repos
 fcd() {
   local selected_dir
   selected_dir=$(find "${SEARCHABLE_DIRS[@]}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | fzf)
@@ -99,20 +111,10 @@ alias zconf="nvim ~/.zshrc"
 
 # ==== PLUGINS ====
 if command -v brew >/dev/null 2>&1; then
-  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-else
-  [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
-    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
-    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # ==== CUSTOM PROMPT ====
-if [ -d "$HOME/.zsh/pure" ]; then
-  fpath+=("$HOME/.zsh/pure")
-else
-  fpath+=("$(brew --prefix)/share/zsh/site-functions")
-fi
 autoload -U promptinit; promptinit
 prompt pure
