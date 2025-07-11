@@ -1,12 +1,29 @@
-# ==== VARIABLES & PATHS ====
-export IS_WORK_LAPTOP=1
+# ==== GENERAL SETTINGS ===
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
 
-export ZSH="$HOME/.zsh"
-export HISTFILE="$ZSH/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+
+autoload -Uz compinit
+compinit
+
+bindkey "^h" backward-word
+bindkey "^l" forward-word
+bindkey '^k' history-search-backward
+bindkey '^j' history-search-forward
+
+# ==== VARIABLES & PATHS ====
+export IS_WORK_LAPTOP=0
 
 # Build PATH systematically - order matters (most specific first)
 # Work-specific paths first
@@ -91,7 +108,12 @@ fcd() {
 }
 
 # ==== SHARED ALIASES ====
+alias ls="ls --color=auto"
 alias la="ls -la"
+alias ll="eza"
+alias lll="eza --long"
+alias lla="eza --all"
+alias llt="eza --tree"
 alias v="nvim"
 alias repos="cd ~/Developer/repos"
 alias dot="cd ~/Developer/repos/dotfiles"
@@ -114,6 +136,8 @@ if command -v brew >/dev/null 2>&1; then
   source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
+
+eval "$(fzf --zsh)"
 
 # ==== CUSTOM PROMPT ====
 autoload -U promptinit; promptinit
