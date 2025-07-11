@@ -1,5 +1,5 @@
 # == GENERAL == #
-theme = firewatch
+theme = ayu-mirage
 title = " "
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
