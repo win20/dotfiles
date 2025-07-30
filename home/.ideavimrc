@@ -17,6 +17,10 @@ set commentary
 
 " Keybindings
 let mapleader = " "
+imap jk <Esc>
+
+nmap <C-n> <Action>(NextTab)
+nmap <C-p> <Action>(PreviousTab)
 
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
@@ -24,6 +28,7 @@ vmap < <gv
 vmap > >gv
 
 nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>s <Action>(SaveAll)
 
 nmap <leader>wv <Action>(SplitVertically)
 nmap <leader>wh <Action>(SplitHorizontally)
