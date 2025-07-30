@@ -1,5 +1,5 @@
 # == GENERAL == #
-theme = ayu-mirage
+theme = github-dark-default
 title = " "
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
