@@ -56,6 +56,12 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # System Python (keep this after homebrew to prefer homebrew python)
 export PATH="/usr/local/bin/python2:$PATH"
 
+# Android development
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 export GPG_TTY=$(tty)
 
 # ==== VERSION MANAGERS ====
@@ -142,3 +148,5 @@ eval "$(fzf --zsh)"
 # ==== CUSTOM PROMPT ====
 autoload -U promptinit; promptinit
 prompt pure
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
