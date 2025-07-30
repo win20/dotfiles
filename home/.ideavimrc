@@ -1,18 +1,55 @@
-let mapleader = " "
-:set relativenumber
-:set number
+" General Settings
+set scrolloff=10
+set relativenumber
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set hlsearch
+set visualbell
+set clipboard+=unnamed
+
+" Plugin Settings
+set surround
+set highlightedyank
+set nerdtree
 set commentary
 
-imap jk <esc>
-set timeoutlen=1000
-map <leader>s :wa<CR>
-nmap <leader>k <Action>(NextTab)
-nmap <leader>j <Action>(PreviousTab)
-nmap <leader>j <Action>(PreviousTab)
-nmap <leader>w <Action>(CloseContent)
-nmap <leader>e <Action>(ActivateProjectToolWindow)
+" Keybindings
+let mapleader = " "
 
-" map <leader>gc :action CommentByLineComment<CR>
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+vmap < <gv
+vmap > >gv
 
-map <leader>ff :action GotoFile<CR>
-map <leader>fs :action FindInPath<CR>
+nmap <leader>e :NERDTreeToggle<CR>
+
+nmap <leader>wv <Action>(SplitVertically)
+nmap <leader>wh <Action>(SplitHorizontally)
+nmap <leader>wu <Action>(Unsplit)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+nmap <leader>dd <Action>(ToggleDistractionFreeMode)
+nmap <leader>dz <Action>(ToggleZenMode)
+
+nmap <leader>am <Action>(ShowIntentionActions)
+nmap <leader>as <Action>(SearchEverywhere)
+
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fc <Action>(FindInPath)
+nmap <leader>fl <Action>(RecentLocations)
+
+nmap <leader>q <Action>(CloseContent)
+
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rf <Action>(IntroduceField)
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+nmap <leader>gu <Action>(ShowUsages)
+
+nmap <leader>gc <Action>(CheckinProject)
+nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gb <Action>(Git.Branches)
