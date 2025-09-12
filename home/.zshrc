@@ -19,8 +19,6 @@ compinit
 
 bindkey "^h" backward-word
 bindkey "^l" forward-word
-bindkey '^k' history-search-backward
-bindkey '^j' history-search-forward
 
 # ==== VARIABLES & PATHS ====
 export IS_WORK_LAPTOP=0
