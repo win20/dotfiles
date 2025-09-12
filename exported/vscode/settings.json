@@ -1,5 +1,7 @@
 {
     // Vim
+  "vim.statusBarColorControl": false,
+  "vim.smartRelativeLine": true,
   "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
@@ -10,7 +12,7 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "s"],
-      "commands": ["workbench.action.files.save"]
+      "commands": ["workbench.action.files.saveAll"]
     },
     {
       "before": ["<leader>", "f", "f"],
@@ -21,19 +23,19 @@
       "commands": ["workbench.action.findInFiles"]
     },
     {
-      "before": ["<leader>", "/"],
-      "commands": ["actions.find"]
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
     },
     {
-      "before": ["<leader>", "s"],
-      "commands": ["workbench.action.files.save"]
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.checkout"]
     },
     {
-      "before": ["<leader>", "k"],
+      "before": ["<C-n>"],
       "commands": [":tabn"]
     },
     {
-      "before": ["<leader>", "j"],
+      "before": ["<C-p>"],
       "commands": [":tabp"]
     },
     {
@@ -51,13 +53,32 @@
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [
+        {
+          "command": "undo",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<C-r>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo",
+          "args": []
+        }
+      ]
     }
   ],
 
   // General
   "editor.minimap.enabled": false,
   "extensions.ignoreRecommendations": true,
-  "vim.smartRelativeLine": true,
   "editor.cursorBlinking": "solid",
   "editor.renderWhitespace": "trailing",
   "workbench.editor.enablePreview": true,
@@ -66,9 +87,9 @@
   "breadcrumbs.filePath": "on",
 
   // Appearance
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark Default",
   "editor.fontFamily": "Monaspace Neon, monospace",
-  "workbench.iconTheme": "jetbrains-file-icon-theme-dark",
+  "workbench.iconTheme": "symbols",
   "editor.fontSize": 14,
   "workbench.tree.renderIndentGuides": "none",
   "editor.guides.highlightActiveIndentation": true,
@@ -77,5 +98,15 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.lineHeight": 1.2,
+  "go.buildTags": "unit,integration",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "go": false
+  },
+  "workbench.activityBar.location": "top",
+  "explorer.compactFolders": false,
 }
-
