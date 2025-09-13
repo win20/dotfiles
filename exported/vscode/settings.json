@@ -51,10 +51,6 @@
       "commands": ["workbench.action.terminal.toggleTerminal"]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    {
       "before": ["u"],
       "after": [],
       "commands": [
