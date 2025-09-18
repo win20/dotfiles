@@ -28,7 +28,7 @@
   },
 
   // Appearance
-  "theme": "Github Dark Dimmed",
+  "theme": "Github Dark",
   "ui_font_family": "Monaspace Neon",
   "ui_font_fallbacks": ["JetBrains Mono"],
   "buffer_font_family": "Monaspace Neon",

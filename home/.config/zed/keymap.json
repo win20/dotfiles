@@ -16,8 +16,8 @@
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "space s": "workspace::SaveAll",
-      "space j": "pane::ActivatePreviousItem",
-      "space k": "pane::ActivateNextItem",
+      "ctrl-p": "pane::ActivatePreviousItem",
+      "ctrl-n": "pane::ActivateNextItem",
       "space f s": "workspace::NewSearch",
       "space f f": "file_finder::Toggle",
       "space q": "pane::CloseActiveItem",
@@ -30,7 +30,9 @@
       "ctrl-w -": "pane::SplitDown",
       "space e": "workspace::ToggleLeftDock",
       "space a": "workspace::ToggleRightDock",
-      "space t": "workspace::ToggleBottomDock"
+      "space t": "workspace::ToggleBottomDock",
+      "cmd-t": "git::Pull",
+      "cmd-shift-t": "git::Push"
     }
   },
   {
@@ -42,9 +44,7 @@
     // Insert mode
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore",
-      "ctrl-j": "editor::MoveDown",
-      "ctrl-k": "editor::MoveUp"
+      "j k": "vim::NormalBefore"
     }
   },
   {
