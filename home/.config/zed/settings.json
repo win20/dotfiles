@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // General
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "base_keymap": "JetBrains",
   "vim_mode": true,
   "relative_line_numbers": true,
