@@ -62,12 +62,11 @@
   // AI
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "model_parameters": [],
-    "default_profile": "write",
-    "version": "2"
+    "default_profile": "write"
   },
 
   // Misc
