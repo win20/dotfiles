@@ -19,7 +19,6 @@
       "space s": "workspace::SaveAll",
       "space f s": "workspace::NewSearch",
       "space f f": "file_finder::Toggle",
-      "shift shift": "file_finder::Toggle",
       "space q": "pane::CloseActiveItem",
 
       // Panes
@@ -79,7 +78,8 @@
       "alt-f12": "workspace::ToggleBottomDock",
       "alt-1": "project_panel::ToggleFocus",
       "alt-2": "git_panel::ToggleFocus",
-      "alt-3": "outline_panel::ToggleFocus"
+      "alt-3": "outline_panel::ToggleFocus",
+      "shift shift": "file_finder::Toggle"
     }
   },
   {
