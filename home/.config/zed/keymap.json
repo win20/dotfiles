@@ -33,7 +33,6 @@
       "ctrl-j": "workspace::ActivatePaneDown",
 
       // Docks
-      "alt-1": "project_panel::ToggleFocus",
       "space e": "workspace::ToggleLeftDock",
       "space a": "workspace::ToggleRightDock",
       "space t": "workspace::ToggleBottomDock",
@@ -42,7 +41,6 @@
       "cmd-t": "git::Pull",
       "cmd-shift-t": "git::Push",
       "space g g": "git_panel::ToggleFocus",
-      "alt-2": "git_panel::ToggleFocus",
       "space g b": "git::Branch",
       "space g r": "git::Restore"
     }
@@ -78,7 +76,10 @@
   {
     "bindings": {
       // navigation within UI menus
-      "alt-f12": "workspace::ToggleBottomDock"
+      "alt-f12": "workspace::ToggleBottomDock",
+      "alt-1": "project_panel::ToggleFocus",
+      "alt-2": "git_panel::ToggleFocus",
+      "alt-3": "outline_panel::ToggleFocus"
     }
   },
   {
