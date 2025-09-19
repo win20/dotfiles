@@ -40,6 +40,12 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "project_panel": {
+    "auto_fold_dirs": false
+  },
 
   // Language specific
   "file_types": {

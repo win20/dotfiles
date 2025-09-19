@@ -79,7 +79,8 @@
       "alt-1": "project_panel::ToggleFocus",
       "alt-2": "git_panel::ToggleFocus",
       "alt-3": "outline_panel::ToggleFocus",
-      "shift shift": "file_finder::Toggle"
+      "shift shift": "file_finder::Toggle",
+      "cmd-shift-o": "projects::OpenRecent"
     }
   },
   {
