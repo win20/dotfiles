@@ -37,8 +37,6 @@
       "space t": "workspace::ToggleBottomDock",
 
       // Git
-      "cmd-t": "git::Pull",
-      "cmd-shift-t": "git::Push",
       "space g g": "git_panel::ToggleFocus",
       "space g b": "git::Branch",
       "space g r": "git::Restore"
@@ -75,6 +73,8 @@
   {
     "bindings": {
       // navigation within UI menus
+      "cmd-t": "git::Pull",
+      "cmd-shift-t": "git::Push",
       "alt-f12": "workspace::ToggleBottomDock",
       "alt-1": "project_panel::ToggleFocus",
       "alt-2": "git_panel::ToggleFocus",
