@@ -34,6 +34,7 @@ export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
 # Language-specific paths
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
