@@ -1,5 +1,5 @@
 # == GENERAL == #
-theme = github-dark-default
+theme = "GitHub Dark"
 title = " "
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
