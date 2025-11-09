@@ -81,7 +81,7 @@ tasks:
       - brew install zsh-syntax-highlighting
 
   default:
-    desc: Needs a specific task to be passed in
+    desc: List all available tasks by default
     cmds:
-      - echo "Please specify a task to run. Use 'task --list' to see available tasks."
+      - task --list
     silent: true
