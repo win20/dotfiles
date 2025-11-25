@@ -41,10 +41,10 @@ keybind = ctrl+d>k=goto_split:top
 keybind = ctrl+d>l=goto_split:right
 
 # Tab Navigation
-keybind = ctrl+d>[=previous_tab
-keybind = ctrl+d>]=next_tab
-keybind = ctrl+d>1=goto_tab:1
-keybind = ctrl+d>2=goto_tab:2
-keybind = ctrl+d>3=goto_tab:3
-keybind = ctrl+d>4=goto_tab:4
+keybind = ctrl+[=previous_tab
+keybind = ctrl+]=next_tab
+keybind = ctrl+1=goto_tab:1
+keybind = ctrl+2=goto_tab:2
+keybind = ctrl+3=goto_tab:3
+keybind = ctrl+4=goto_tab:4
 keybind = shift+enter=text:\n
