@@ -6,11 +6,19 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+  // Disable these default keybindings
+  {
+    "bindings": {
+      "cmd-shift-c": null,
+      "cmd-shift-x": null,
+    },
+  },
+
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
-    }
+    },
   },
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
@@ -32,33 +40,52 @@
       "ctrl-j": "workspace::ActivatePaneDown",
 
       // Docks
-      "space e": "workspace::ToggleLeftDock",
-      "space a": "workspace::ToggleRightDock",
-      "space t": "workspace::ToggleBottomDock",
+      "cmd-shift-x": "workspace::ToggleLeftDock",
+      "cmd-shift-c": "workspace::ToggleRightDock",
 
       // Git
       "space g g": "git_panel::ToggleFocus",
       "space g b": "git::Branch",
-      "space g r": "git::Restore"
-    }
+      "space g r": "git::Restore",
+    },
+  },
+  {
+    "context": "ProjectPanel || Terminal",
+    "bindings": {
+      "cmd-shift-x": "workspace::ToggleLeftDock",
+      "cmd-shift-c": "workspace::ToggleRightDock",
+      "ctrl-n": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-n": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "project_panel::ToggleFocus",
+    },
   },
   {
     // Visual, visual line & visual block modes
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
-    "bindings": {}
+    "bindings": {},
   },
   {
     // Insert mode
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore"
-    }
+      "j k": "vim::NormalBefore",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-j": "editor::JoinLines"
-    }
+      "ctrl-shift-j": "editor::JoinLines",
+    },
   },
   {
     "context": "Dock",
@@ -66,8 +93,8 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
   },
 
   {
@@ -76,27 +103,24 @@
       "cmd-t": "git::Pull",
       "cmd-shift-t": "git::Push",
       "alt-f12": "workspace::ToggleBottomDock",
-      "alt-1": "project_panel::ToggleFocus",
-      "alt-2": "git_panel::ToggleFocus",
-      "alt-3": "outline_panel::ToggleFocus",
       "shift shift": "file_finder::Toggle",
-      "cmd-shift-o": "projects::OpenRecent"
-    }
+      "cmd-shift-o": "projects::OpenRecent",
+    },
   },
   {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       // navigation within code suggestions
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrevious"
-    }
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
   },
   {
     "context": "ProjectPanel && not_editing",
     "use_key_equivalents": true,
     "bindings": {
       "space e": "workspace::ToggleLeftDock",
-      "o": "project_panel::Open"
-    }
-  }
+      "o": "project_panel::Open",
+    },
+  },
 ]

@@ -11,89 +11,99 @@
   "icon_theme": "Colored Zed Icons Theme Dark",
   "base_keymap": "JetBrains",
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "tab_size": 2,
   "show_whitespaces": "trailing",
   "show_wrap_guides": true,
   "wrap_guides": [120],
   "preview_tabs": {
-    "enabled": true
+    "enabled": true,
   },
   "toolbar": {
     "breadcrumbs": true,
-    "quick_actions": true
+    "quick_actions": true,
   },
   "inlay_hints": {
-    "enabled": false
+    "enabled": false,
   },
 
   // Appearance
   "theme": "Github Dark",
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "Monaspace Neon NF",
   "ui_font_fallbacks": [".ZedMono"],
-  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_family": "Monaspace Neon NF",
   "buffer_font_fallbacks": [".ZedMono"],
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "indent_guides": {
     "enabled": true,
-    "coloring": "indent_aware"
+    "coloring": "indent_aware",
   },
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "project_panel": {
-    "auto_fold_dirs": false
+    "auto_fold_dirs": false,
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "debugger": {
+    "button": null,
   },
 
   // Language specific
   "file_types": {
-    "YAML": ["yml"]
+    "YAML": ["yml"],
   },
   "languages": {
     "PHP": {
-      "tab_size": 4
+      "tab_size": 4,
     },
     "TypeScript": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JavaScript": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "YAML": {
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
   },
 
   // AI
   "agent": {
+    "button": null,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4",
     },
     "model_parameters": [],
-    "default_profile": "write"
+    "default_profile": "write",
   },
 
   // Misc
   "terminal": {
+    "dock": "right",
+    "font_size": 14,
     "shell": "system",
     "toolbar": {
-      "breadcrumbs": false
-    }
+      "breadcrumbs": false,
+    },
   },
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
-  }
+    "diagnostics": false,
+  },
 }
