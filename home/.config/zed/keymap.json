@@ -11,6 +11,8 @@
     "bindings": {
       "cmd-shift-c": null,
       "cmd-shift-x": null,
+      "cmd-shift-s": null,
+      "cmd-shift-d": null,
     },
   },
 
@@ -39,9 +41,10 @@
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
 
-      // Docks
-      "cmd-shift-x": "workspace::ToggleLeftDock",
-      "cmd-shift-c": "workspace::ToggleRightDock",
+      // Panels
+      "cmd-shift-x": "project_panel::ToggleFocus",
+      "cmd-shift-c": "terminal_panel::Toggle",
+      "cmd-shift-s": "workspace::ToggleLeftDock",
 
       // Git
       "space g g": "git_panel::ToggleFocus",
@@ -50,23 +53,17 @@
     },
   },
   {
-    "context": "ProjectPanel || Terminal",
-    "bindings": {
-      "cmd-shift-x": "workspace::ToggleLeftDock",
-      "cmd-shift-c": "workspace::ToggleRightDock",
-      "ctrl-n": "terminal_panel::ToggleFocus",
-    },
-  },
-  {
     "context": "ProjectPanel",
     "bindings": {
       "ctrl-n": "terminal_panel::ToggleFocus",
+      "cmd-shift-x": "workspace::ToggleRightDock",
     },
   },
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-n": "project_panel::ToggleFocus",
+      "cmd-shift-c": "terminal_panel::Toggle",
     },
   },
   {
