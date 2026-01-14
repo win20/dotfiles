@@ -53,16 +53,34 @@
     },
   },
   {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-s": "workspace::ToggleLeftDock",
+      "cmd-shift-x": "project_panel::ToggleFocus",
+      "cmd-shift-c": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "GitPanel || CommitEditor",
+    "bindings": {
+      "cmd-shift-s": "workspace::ToggleLeftDock",
+      "cmd-shift-x": "project_panel::ToggleFocus",
+      "cmd-shift-c": "terminal_panel::Toggle",
+    },
+  },
+  {
     "context": "ProjectPanel",
     "bindings": {
-      "ctrl-n": "terminal_panel::ToggleFocus",
+      "cmd-shift-s": "workspace::ToggleLeftDock",
       "cmd-shift-x": "workspace::ToggleRightDock",
+      "cmd-shift-c": "terminal_panel::Toggle",
     },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-n": "project_panel::ToggleFocus",
+      "cmd-shift-s": "workspace::ToggleLeftDock",
+      "cmd-shift-x": "project_panel::ToggleFocus",
       "cmd-shift-c": "terminal_panel::Toggle",
     },
   },

@@ -51,7 +51,7 @@
     "button": false,
   },
   "debugger": {
-    "button": null,
+    "button": false,
   },
 
   // Language specific
@@ -75,7 +75,7 @@
 
   // AI
   "agent": {
-    "button": null,
+    "button": false,
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4",
