@@ -1,7 +1,7 @@
 ---
 description: Technical documentation specialist for clear, comprehensive docs
 mode: subagent
-model: anthropic/claude-sonnet-4-20250514
+model: github-copilot/claude-sonnet-4-5
 temperature: 0.2
 tools:
   write: true
@@ -27,4 +27,4 @@ You are a technical documentation specialist. Create clear, concise and focused 
 - Use Markdown formatting consistently
 - Include syntax highlighting for code blocks
 - Add clear section breaks and navigation
-- Provide both quick-start and detailed guides
+- Provide both quick-start and detailed guides if applicable
