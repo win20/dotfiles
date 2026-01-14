@@ -8,6 +8,23 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // General
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "base_keymap": "JetBrains",
   "vim_mode": true,
