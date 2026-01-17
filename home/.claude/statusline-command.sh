@@ -8,9 +8,9 @@ model_name=$(echo "$input" | jq -r '.model.display_name')
 current_dir=$(echo "$input" | jq -r '.workspace.current_dir')
 remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 
-# Try to extract input/output tokens
-input_tokens=$(echo "$input" | jq -r '.usage.input_tokens // .tokens.input // empty')
-output_tokens=$(echo "$input" | jq -r '.usage.output_tokens // .tokens.output // empty')
+# Try to extract input/output tokens from current usage
+input_tokens=$(echo "$input" | jq -r '.context_window.current_usage.input_tokens // empty')
+output_tokens=$(echo "$input" | jq -r '.context_window.current_usage.output_tokens // empty')
 
 # Get git branch if in a git repo
 git_branch=""
@@ -35,21 +35,15 @@ if [[ -n "$remaining" ]]; then
   used_pct=$((100 - remaining_int))
 fi
 
-# ANSI color codes
-CYAN='\033[36m'
-PINK='\033[38;5;217m'
-YELLOW='\033[33m'
-RESET='\033[0m'
-
-# Build first line with colors: Model name | Ctx %: percentage | input In / output Out
-line1="${CYAN}${model_name}${RESET}"
+# Build first line: Model name | Ctx %: percentage | input In / output Out
+line1="${model_name}"
 
 if [[ -n "$used_pct" ]]; then
-  line1+=" | ${PINK}Ctx %: ${used_pct}%${RESET}"
+  line1+=" | Ctx %: ${used_pct}%"
 fi
 
 if [[ -n "$input_tokens" && -n "$output_tokens" ]]; then
-  line1+=" | ${YELLOW}${input_tokens} In / ${output_tokens} Out${RESET}"
+  line1+=" | ${input_tokens} In / ${output_tokens} Out"
 fi
 
 # Build second line: Current directory name (Git branch)
@@ -59,5 +53,5 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 # Output both lines
-echo -e "${line1}"
+echo "${line1}"
 echo "$line2"
