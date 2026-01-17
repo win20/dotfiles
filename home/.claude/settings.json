@@ -1,8 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Read(~/.zshrc)"
-    ],
     "deny": [
       "Bash(curl:*)",
       "Read(./.env)",
@@ -10,9 +7,12 @@
       "Read(./secrets/**)"
     ]
   },
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "/bin/bash ~/.claude/statusline-command.sh"
   },
-  "model": "sonnet"
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  }
 }

@@ -32,6 +32,7 @@ fi
 # User-specific tool paths
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Language-specific paths
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
