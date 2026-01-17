@@ -79,6 +79,7 @@ tasks:
       - test -e {{.DOTFILES_DIR}}/home/.claude/commands && ln -svf {{.DOTFILES_DIR}}/home/.claude/commands {{.HOME_DIR}}/.claude/commands || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/skills && ln -svf {{.DOTFILES_DIR}}/home/.claude/skills {{.HOME_DIR}}/.claude/skills || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/settings.json && ln -svf {{.DOTFILES_DIR}}/home/.claude/settings.json {{.HOME_DIR}}/.claude/settings.json || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh && ln -svf {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh {{.HOME_DIR}}/.claude/statusline-command.sh || true
 
   ln-all:
     desc: Symlink all configurations defined in this Taskfile

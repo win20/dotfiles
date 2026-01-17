@@ -1,11 +1,18 @@
 {
   "permissions": {
-    "allow": ["Read(~/.zshrc)"],
+    "allow": [
+      "Read(~/.zshrc)"
+    ],
     "deny": [
       "Bash(curl:*)",
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/bin/bash ~/.claude/statusline-command.sh"
+  },
+  "model": "sonnet"
 }
