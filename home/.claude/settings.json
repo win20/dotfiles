@@ -7,7 +7,6 @@
       "Read(./secrets/**)"
     ]
   },
-  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "/bin/bash ~/.claude/statusline-command.sh"

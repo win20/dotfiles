@@ -11,7 +11,7 @@
   "icon_theme": "Soft Charmed Icons",
   "base_keymap": "JetBrains",
   "vim_mode": true,
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": "disabled",
   "cursor_blink": false,
   "tab_size": 2,
   "show_whitespaces": "trailing",
