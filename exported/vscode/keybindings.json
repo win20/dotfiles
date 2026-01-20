@@ -1,180 +1,178 @@
-// Place your key bindings in this file to override the defaults
 [
-    {
-      "key": "ctrl+n",
-      "command": "workbench.action.quickOpenSelectNext",
-      "when": "inQuickOpen"
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-copyFilePath",
+    "when": "!editorFocus && !terminalFocus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.action.terminal.chat.start",
+    "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+i",
+    "command": "-workbench.action.terminal.chat.start",
+    "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "-workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.focus",
+    "when": "terminalHasBeenCreated && !terminalFocus || terminalProcessSupported && !terminalFocus"
+  },
+  {
+    "key": "alt+f12",
+    "command": "-workbench.action.terminal.focus",
+    "when": "terminalHasBeenCreated && !terminalFocus || terminalProcessSupported && !terminalFocus"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "alt+f12",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active && terminalFocus"
+  },
+  {
+    "key": "cmd+numpad1",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+  },
+  {
+    "key": "shift+cmd+x",
+    "command": "-workbench.view.extensions",
+    "when": "viewContainer.workbench.view.extensions.enabled"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "cmd+numpad1",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "shift+cmd+x",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\\\r\n"
     },
-    {
-      "key": "ctrl+n",
-      "command": "selectNextCodeAction",
-      "when": "codeActionMenuVisible"
-    },
-    {
-      "key": "ctrl+n",
-      "command": "selectNextSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-      "key": "ctrl+p",
-      "command": "workbench.action.quickOpenSelectPrevious",
-      "when": "inQuickOpen"
-    },
-    {
-      "key": "ctrl+p",
-      "command": "selectPrevCodeAction",
-      "when": "codeActionMenuVisible"
-    },
-    {
-      "key": "ctrl+p",
-      "command": "selectPrevSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-      "key": "ctrl+p",
-      "command": "showPrevParameterHint",
-      "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
-    },
-    {
-      "key": "shift+cmd+c",
-      "command": "-workbench.action.terminal.openNativeConsole",
-      "when": "!terminalFocus"
-    },
-    {
-      "key": "shift+cmd+c",
-      "command": "-copyFilePath",
-      "when": "!editorFocus && !terminalFocus"
-    },
-    {
-      "key": "shift+cmd+c",
-      "command": "workbench.panel.chat",
-      "when": "workbench.panel.chat.view.copilot.active"
-    },
-    {
-      "key": "ctrl+cmd+i",
-      "command": "-workbench.panel.chat",
-      "when": "workbench.panel.chat.view.copilot.active"
-    },
-    {
-      "key": "shift+cmd+c",
-      "command": "workbench.action.terminal.chat.start",
-      "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
-    },
-    {
-      "key": "cmd+i",
-      "command": "-workbench.action.terminal.chat.start",
-      "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
-    },
-    {
-      "key": "shift+cmd+d",
-      "command": "-workbench.view.debug",
-      "when": "viewContainer.workbench.view.debug.enabled"
-    },
-    {
-      "key": "alt+f12",
-      "command": "workbench.action.terminal.focus",
-      "when": "terminalHasBeenCreated && !terminalFocus || terminalProcessSupported && !terminalFocus"
-    },
-    {
-      "key": "alt+f12",
-      "command": "-workbench.action.terminal.focus",
-      "when": "terminalHasBeenCreated && !terminalFocus || terminalProcessSupported && !terminalFocus"
-    },
-    {
-      "key": "shift+cmd+d",
-      "command": "workbench.action.terminal.toggleTerminal",
-      "when": "terminal.active"
-    },
-    {
-      "key": "alt+f12",
-      "command": "-workbench.action.terminal.toggleTerminal",
-      "when": "terminal.active && terminalFocus"
-    },
-    {
-      "key": "cmd+numpad1",
-      "command": "-workbench.view.explorer",
-      "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
-    },
-    {
-      "key": "cmd+1",
-      "command": "-workbench.view.explorer",
-      "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
-    },
-    {
-      "key": "shift+cmd+x",
-      "command": "-workbench.view.extensions",
-      "when": "viewContainer.workbench.view.extensions.enabled"
-    },
-    {
-      "key": "shift+cmd+e",
-      "command": "-workbench.view.explorer",
-      "when": "viewContainer.workbench.view.explorer.enabled"
-    },
-    {
-      "key": "cmd+numpad1",
-      "command": "-workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletFocus"
-    },
-    {
-      "key": "shift+cmd+x",
-      "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-      "key": "cmd+1",
-      "command": "-workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletFocus"
-    },
-    {
-      "key": "shift+enter",
-      "command": "workbench.action.terminal.sendSequence",
-      "args": {
-        "text": "\\\r\n"
-      },
-      "when": "terminalFocus"
-    },
-    {
-      "key": "ctrl+r",
-      "command": "-go.test.previous",
-      "when": "editorLangId == 'go'"
-    },
-    {
-      "key": "ctrl+r",
-      "command": "-workbench.action.openRecent"
-    },
-    {
-      "key": "ctrl+r",
-      "command": "-workbench.action.tasks.reRunTask",
-      "when": "taskCommandsRegistered && !terminalFocus"
-    },
-    {
-      "key": "cmd+t",
-      "command": "git.pull",
-      "when": ""
-    },
-    {
-      "key": "cmd+shift+k",
-      "command": "git.push",
-      "when": ""
-    },
-    {
-      "key": "cmd+shift+c",
-      "command": "workbench.action.toggleAuxiliaryBar",
-      "when": ""
-    },
-    {
-      "key": "shift+r",
-      "command": "editor.action.rename",
-      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-      "key": "shift+r",
-      "command": "editor.action.changeAll",
-      "when": "editorTextFocus && !editorHasRenameProvider && !editorReadonly"
-    },
-    {
-      "key": "shift+r",
-      "command": "renameFile",
-      "when": "explorerViewletVisible && filesExplorerFocus"
-    }
-  ]
-  
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-go.test.previous",
+    "when": "editorLangId == 'go'"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.tasks.reRunTask",
+    "when": "taskCommandsRegistered && !terminalFocus"
+  },
+  {
+    "key": "cmd+t",
+    "command": "git.pull",
+    "when": ""
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "git.push",
+    "when": ""
+  },
+  {
+    "key": "cmd+shift+c",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": ""
+  },
+  {
+    "key": "shift+r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+r",
+    "command": "editor.action.changeAll",
+    "when": "editorTextFocus && !editorHasRenameProvider && !editorReadonly"
+  },
+  {
+    "key": "shift+r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  }
+]
