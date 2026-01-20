@@ -1,5 +1,5 @@
 {
-    // Vim
+  // Vim
   "vim.statusBarColorControl": false,
   "vim.smartRelativeLine": true,
   "vim.leader": "<space>",
@@ -105,4 +105,25 @@
   },
   "workbench.activityBar.location": "top",
   "explorer.compactFolders": false,
+  "symbols.hidesExplorerArrows": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.confirmSync": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.graph.minimap.enabled": false,
+
+  // Language specific settings
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "cursor.composer.usageSummaryDisplay": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.useTerminal": true
 }

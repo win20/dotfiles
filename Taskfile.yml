@@ -81,6 +81,24 @@ tasks:
       - test -e {{.DOTFILES_DIR}}/home/.claude/settings.json && ln -svf {{.DOTFILES_DIR}}/home/.claude/settings.json {{.HOME_DIR}}/.claude/settings.json || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh && ln -svf {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh {{.HOME_DIR}}/.claude/statusline-command.sh || true
 
+  ln-vscode:
+    desc: Symlink VSCode configuration files
+    cmds:
+      - test -e {{.DOTFILES_DIR}}/exported/vscode/settings.json && ln -svf {{.DOTFILES_DIR}}/exported/vscode/settings.json {{.HOME_DIR}}/Library/Application Support/Code/User/settings.json || true
+      - test -e {{.DOTFILES_DIR}}/exported/vscode/keybindings.json && ln -svf {{.DOTFILES_DIR}}/exported/vscode/keybindings.json {{.HOME_DIR}}/Library/Application Support/Code/User/keybindings.json || true
+    status:
+      - test "$(readlink {{.HOME_DIR}}/Library/Application Support/Code/User/settings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/settings.json"
+      - test "$(readlink {{.HOME_DIR}}/Library/Application Support/Code/User/keybindings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/keybindings.json"
+
+  ln-cursor:
+    desc: Symlink Cursor configuration files
+    cmds:
+      - test -e {{.DOTFILES_DIR}}/exported/vscode/settings.json && ln -svf {{.DOTFILES_DIR}}/exported/vscode/settings.json {{.HOME_DIR}}/Library/Application Support/Cursor/User/settings.json || true
+      - test -e {{.DOTFILES_DIR}}/exported/vscode/keybindings.json && ln -svf {{.DOTFILES_DIR}}/exported/vscode/keybindings.json {{.HOME_DIR}}/Library/Application Support/Cursor/User/keybindings.json || true
+    status:
+      - test "$(readlink {{.HOME_DIR}}/Library/Application Support/Cursor/User/settings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/settings.json"
+      - test "$(readlink {{.HOME_DIR}}/Library/Application Support/Cursor/User/keybindings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/keybindings.json"
+
   ln-all:
     desc: Symlink all configurations defined in this Taskfile
     deps:
