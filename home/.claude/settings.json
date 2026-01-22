@@ -1,11 +1,26 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(head:*)",
+      "Bash(wc:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(npx tsc:*)",
+      "Bash(xargs:*)",
+      "Bash(done)",
+      "Bash(npx madge:*)",
+      "Bash(grep:*)",
+      "Skill(expo-react-native)"
+    ],
     "deny": [
       "Bash(curl:*)",
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
-    ]
+    ],
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
@@ -14,5 +29,6 @@
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
   },
+  "promptSuggestionEnabled": false,
   "model": "sonnet"
 }

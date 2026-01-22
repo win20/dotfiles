@@ -1,6 +1,6 @@
 ---
 description: Simplifies and refines code for clarity, consistency, and maintainability while preserving all functionality. Focuses on recently modified code unless instructed otherwise.
-model: claude-opus-4-5
+model: opus
 argument-hint: [file-or-folder-to-simplify]
 disable-model-invocation: true
 ---

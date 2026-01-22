@@ -125,5 +125,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.useTerminal": true
+  "claudeCode.useTerminal": true,
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash"
 }

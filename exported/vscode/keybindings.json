@@ -124,14 +124,6 @@
     "when": "explorerViewletFocus"
   },
   {
-    "key": "shift+enter",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "\\\r\n"
-    },
-    "when": "terminalFocus"
-  },
-  {
     "key": "ctrl+r",
     "command": "-go.test.previous",
     "when": "editorLangId == 'go'"
@@ -161,12 +153,12 @@
     "when": ""
   },
   {
-    "key": "shift+r",
+    "key": "shift+f6",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+r",
+    "key": "shift+f6",
     "command": "editor.action.changeAll",
     "when": "editorTextFocus && !editorHasRenameProvider && !editorReadonly"
   },
@@ -174,5 +166,13 @@
     "key": "shift+r",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+      "key": "shift+enter",
+      "command": "workbench.action.terminal.sendSequence",
+      "args": {
+          "text": "\u001b\r"
+      },
+      "when": "terminalFocus"
   }
 ]
