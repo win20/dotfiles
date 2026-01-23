@@ -6,49 +6,49 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "s"],
-      "commands": ["workbench.action.files.saveAll"]
+      "commands": ["workbench.action.files.saveAll"],
     },
     {
       "before": ["<leader>", "f", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "commands": ["workbench.action.quickOpen"],
     },
     {
       "before": ["<leader>", "f", "s"],
-      "commands": ["workbench.action.findInFiles"]
+      "commands": ["workbench.action.findInFiles"],
     },
     {
       "before": ["<leader>", "r", "n"],
-      "commands": ["editor.action.rename"]
+      "commands": ["editor.action.rename"],
     },
     {
       "before": ["<leader>", "g", "b"],
-      "commands": ["git.checkout"]
+      "commands": ["git.checkout"],
     },
     {
       "before": ["<C-n>"],
-      "commands": [":tabn"]
+      "commands": [":tabn"],
     },
     {
       "before": ["<C-p>"],
-      "commands": [":tabp"]
+      "commands": [":tabp"],
     },
     {
       "before": ["e"],
-      "commands": ["workbench.view.explorer"]
+      "commands": ["workbench.view.explorer"],
     },
     {
       "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "commands": ["workbench.action.closeActiveEditor"],
     },
     {
       "before": ["<leader>", "t"],
-      "commands": ["workbench.action.terminal.toggleTerminal"]
+      "commands": ["workbench.action.terminal.toggleTerminal"],
     },
     {
       "before": ["u"],
@@ -56,9 +56,9 @@
       "commands": [
         {
           "command": "undo",
-          "args": []
-        }
-      ]
+          "args": [],
+        },
+      ],
     },
     {
       "before": ["<C-r>"],
@@ -66,10 +66,10 @@
       "commands": [
         {
           "command": "redo",
-          "args": []
-        }
-      ]
-    }
+          "args": [],
+        },
+      ],
+    },
   ],
 
   // General
@@ -101,7 +101,7 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false,
-    "go": false
+    "go": false,
   },
   "workbench.activityBar.location": "top",
   "explorer.compactFolders": false,
@@ -118,14 +118,15 @@
     "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
+      "source.organizeImports": "explicit",
+    },
   },
   "cursor.composer.usageSummaryDisplay": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
-  "claudeCode.preferredLocation": "panel",
+  "claudeCode.preferredLocation": "sidebar",
   "claudeCode.useTerminal": true,
   "gitlens.ai.model": "gitkraken",
-  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash"
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
 }
