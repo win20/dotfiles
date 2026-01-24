@@ -124,9 +124,15 @@
   "cursor.composer.usageSummaryDisplay": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
-  "claudeCode.preferredLocation": "sidebar",
-  "claudeCode.useTerminal": true,
   "gitlens.ai.model": "gitkraken",
   "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
   "cursor.composer.shouldChimeAfterChatFinishes": true,
+
+  "window.restoreWindows": "folders",
+
+  // Claude Code
+  "claudeCode.useCtrlEnterToSend": true,
+  "claudeCode.selectedModel": "default",
+  "claudeCode.useTerminal": true,
+  "claudeCode.preferredLocation": "panel",
 }
