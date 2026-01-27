@@ -8,11 +8,13 @@ disable-model-invocation: true
 **Task**: $ARGUMENTS
 
 You are orchestrating a deep, thorough plan for a potentially difficult task, I need you to:
+
 1. Do some basic research and context gathering for the task at hand.
 2. If anything is unsure, or you think of anything the use may have missed, ask clarifying questions using the `AskUserQuestion`.
 3. When the initial requirements are clear, invoke the `planner` agent with that context and clear requirements.
 
 The planner agent will then:
+
 - Analyze the request and restate requirements in clear terms
 - Break down into phases with specific, actionable steps
 - Identify dependencies between components
@@ -20,4 +22,4 @@ The planner agent will then:
 - Estimate complexity (High/Medium/Low)
 - Present the plan
 
-Take the plan that is presented to you and write it into a document at `.agent/plans/{dd-mm-yyy-feature-a}.md`
+Take the plan that is presented to you and write it into a document at `.agent/plans/{dd-mm-yyy-feature-a}.md` and if required separate into multiple files/phases which will look like `.agent/plans/{dd-mm-yyy-feature-a}/phase-1.md`
