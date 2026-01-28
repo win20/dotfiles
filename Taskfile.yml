@@ -74,6 +74,7 @@ tasks:
   ln-claude-code:
     desc: Symlink Claude Code configuration files (does not link skills)
     cmds:
+      - test -e {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md && ln -svf {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md {{.HOME_DIR}}/.claude/CLAUDE.md || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/agents && ln -svf {{.DOTFILES_DIR}}/home/.claude/agents {{.HOME_DIR}}/.claude/agents || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/commands && ln -svf {{.DOTFILES_DIR}}/home/.claude/commands {{.HOME_DIR}}/.claude/commands || true
       - test -e {{.DOTFILES_DIR}}/home/.claude/settings.json && ln -svf {{.DOTFILES_DIR}}/home/.claude/settings.json {{.HOME_DIR}}/.claude/settings.json || true
