@@ -1,7 +1,7 @@
 {
   // Vim
   "vim.statusBarColorControl": false,
-  "vim.smartRelativeLine": true,
+  "vim.smartRelativeLine": false,
   "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
@@ -250,5 +250,9 @@
     "sound": "off",
     "announcement": "auto",
   },
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "claudeCode.useTerminal": true,
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
   "cursor.composer.shouldChimeAfterChatFinishes": true,
 }
