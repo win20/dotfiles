@@ -22,9 +22,11 @@
     ],
     "defaultMode": "default"
   },
+  "model": "haiku",
   "statusLine": {
     "type": "command",
-    "command": "/bin/bash ~/.claude/statusline-command.sh"
+    "command": "~/.claude/ccline/ccline",
+    "padding": 0
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true

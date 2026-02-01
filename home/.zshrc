@@ -151,3 +151,10 @@ autoload -U promptinit; promptinit
 prompt pure
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# bun completions
+[ -s "/Users/winbarua/.bun/_bun" ] && source "/Users/winbarua/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
