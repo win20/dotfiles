@@ -16,7 +16,7 @@ tasks:
     desc: Symlink WezTerm configuration
     cmds:
       - mkdir -p {{.HOME_DIR}}/.config
-      - ln -svf {{.DOTFILES_DIR}}/home/.config/wezterm {{.HOME_DIR}}/.config/wezterm
+      - ln -sfn {{.DOTFILES_DIR}}/home/.config/wezterm {{.HOME_DIR}}/.config/wezterm
     status:
       - test "$(readlink {{.HOME_DIR}}/.config/wezterm)" = "{{.DOTFILES_DIR}}/home/.config/wezterm"
 
@@ -24,7 +24,7 @@ tasks:
     desc: Symlink Neovim configuration
     cmds:
       - mkdir -p {{.HOME_DIR}}/.config
-      - ln -svf {{.DOTFILES_DIR}}/home/.config/nvim {{.HOME_DIR}}/.config/nvim
+      - ln -sfn {{.DOTFILES_DIR}}/home/.config/nvim {{.HOME_DIR}}/.config/nvim
     status:
       - test "$(readlink {{.HOME_DIR}}/.config/nvim)" = "{{.DOTFILES_DIR}}/home/.config/nvim"
 
@@ -45,14 +45,14 @@ tasks:
   ln-zellij:
     desc: Symlink Zellij configuration
     cmds:
-      - ln -svf {{.DOTFILES_DIR}}/home/.config/zellij {{.HOME_DIR}}/.config/zellij
+      - ln -sfn {{.DOTFILES_DIR}}/home/.config/zellij {{.HOME_DIR}}/.config/zellij
     status:
       - test "$(readlink {{.HOME_DIR}}/.config/zellij)" = "{{.DOTFILES_DIR}}/home/.config/zellij"
 
   ln-ghostty:
     desc: Symlink Ghostty configuration
     cmds:
-      - ln -svf {{.DOTFILES_DIR}}/home/.config/ghostty {{.HOME_DIR}}/.config/ghostty
+      - ln -sfn {{.DOTFILES_DIR}}/home/.config/ghostty {{.HOME_DIR}}/.config/ghostty
     status:
       - test "$(readlink {{.HOME_DIR}}/.config/ghostty)" = "{{.DOTFILES_DIR}}/home/.config/ghostty"
 
@@ -67,18 +67,18 @@ tasks:
   ln-opencode:
     desc: Symlink OpenCode configuration files (does not link skills)
     cmds:
-      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/AGENTS.md && ln -svf {{.DOTFILES_DIR}}/home/.config/opencode/AGENTS.md {{.HOME_DIR}}/.config/opencode/AGENTS.md || true
-      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/agent && ln -svf {{.DOTFILES_DIR}}/home/.config/opencode/agent {{.HOME_DIR}}/.config/opencode/agent || true
-      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/command && ln -svf {{.DOTFILES_DIR}}/home/.config/opencode/command {{.HOME_DIR}}/.config/opencode/command || true
+      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/AGENTS.md && ln -sfn {{.DOTFILES_DIR}}/home/.config/opencode/AGENTS.md {{.HOME_DIR}}/.config/opencode/AGENTS.md || true
+      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/agent && ln -sfn {{.DOTFILES_DIR}}/home/.config/opencode/agent {{.HOME_DIR}}/.config/opencode/agent || true
+      - test -e {{.DOTFILES_DIR}}/home/.config/opencode/command && ln -sfn {{.DOTFILES_DIR}}/home/.config/opencode/command {{.HOME_DIR}}/.config/opencode/command || true
 
   ln-claude-code:
     desc: Symlink Claude Code configuration files (does not link skills)
     cmds:
-      - test -e {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md && ln -svf {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md {{.HOME_DIR}}/.claude/CLAUDE.md || true
-      - test -e {{.DOTFILES_DIR}}/home/.claude/agents && ln -svf {{.DOTFILES_DIR}}/home/.claude/agents {{.HOME_DIR}}/.claude/agents || true
-      - test -e {{.DOTFILES_DIR}}/home/.claude/commands && ln -svf {{.DOTFILES_DIR}}/home/.claude/commands {{.HOME_DIR}}/.claude/commands || true
-      - test -e {{.DOTFILES_DIR}}/home/.claude/settings.json && ln -svf {{.DOTFILES_DIR}}/home/.claude/settings.json {{.HOME_DIR}}/.claude/settings.json || true
-      - test -e {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh && ln -svf {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh {{.HOME_DIR}}/.claude/statusline-command.sh || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md && ln -sfn {{.DOTFILES_DIR}}/home/.claude/CLAUDE.md {{.HOME_DIR}}/.claude/CLAUDE.md || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/agents && ln -sfn {{.DOTFILES_DIR}}/home/.claude/agents {{.HOME_DIR}}/.claude/agents || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/commands && ln -sfn {{.DOTFILES_DIR}}/home/.claude/commands {{.HOME_DIR}}/.claude/commands || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/settings.json && ln -sfn {{.DOTFILES_DIR}}/home/.claude/settings.json {{.HOME_DIR}}/.claude/settings.json || true
+      - test -e {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh && ln -sfn {{.DOTFILES_DIR}}/home/.claude/statusline-command.sh {{.HOME_DIR}}/.claude/statusline-command.sh || true
 
   ln-vscode:
     desc: Symlink VSCode configuration files
