@@ -28,6 +28,8 @@ Rewrite the user's request as a clear, specific, and complete prompt that guides
 - Use **bold**, _italics_, bullet points (`-`), and numbered lists (1., 2.) liberally for organisation
 - Never use emojis
 - Never use `*` for bullet points, always use `-`
+- Never use `---` to delimit sections
+- Never use markdown table formatting or other way to make the prompt look "nicer", this is helpful for humans but not for AI
 
 ### Language
 
