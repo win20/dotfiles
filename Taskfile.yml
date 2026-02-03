@@ -98,6 +98,13 @@ tasks:
       - test "$(readlink {{.HOME_DIR}}/Library/Application\ Support/Cursor/User/settings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/settings.json"
       - test "$(readlink {{.HOME_DIR}}/Library/Application\ Support/Cursor/User/keybindings.json)" = "{{.DOTFILES_DIR}}/exported/vscode/keybindings.json"
 
+  ln-codex:
+    desc: Symlink Codex configuration files
+    cmds:
+      - test -e {{.DOTFILES_DIR}}/home/.codex/AGENTS.md && ln -sfn {{.DOTFILES_DIR}}/home/.codex/AGENTS.md {{.HOME_DIR}}/.codex/AGENTS.md || true
+    status:
+      - test "$(readlink {{.HOME_DIR}}/.codex/AGENTS.md)" = "{{.DOTFILES_DIR}}/home/.codex/AGENTS.md"
+
   ln-all:
     desc: Symlink all configurations defined in this Taskfile
     deps:

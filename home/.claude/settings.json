@@ -22,7 +22,6 @@
     ],
     "defaultMode": "default"
   },
-  "model": "haiku",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/ccline/ccline",
