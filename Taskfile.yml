@@ -105,15 +105,41 @@ tasks:
     status:
       - test "$(readlink {{.HOME_DIR}}/.codex/AGENTS.md)" = "{{.DOTFILES_DIR}}/home/.codex/AGENTS.md"
 
-  ln-all:
-    desc: Symlink all configurations defined in this Taskfile
-    deps:
-      - ln-wezterm
-      - ln-nvim
-      - ln-zshrc
-      - ln-ideavimrc
-      - ln-zellij
-      - ln-ghostty
+  ln-claude-skills:
+    desc: Symlink Claude skills (individual skill folders)
+    cmds:
+      - mkdir -p {{.HOME_DIR}}/.claude/skills
+      - |
+        for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
+          if [ -d "$skill_dir" ]; then
+            skill_name=$(basename "$skill_dir")
+            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.claude/skills/$skill_name"
+          fi
+        done
+
+  ln-codex-skills:
+    desc: Symlink Codex skills (individual skill folders)
+    cmds:
+      - mkdir -p {{.HOME_DIR}}/.codex/skills
+      - |
+        for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
+          if [ -d "$skill_dir" ]; then
+            skill_name=$(basename "$skill_dir")
+            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.codex/skills/$skill_name"
+          fi
+        done
+
+  ln-cursor-skills:
+    desc: Symlink Cursor skills (individual skill folders)
+    cmds:
+      - mkdir -p {{.HOME_DIR}}/.cursor/skills
+      - |
+        for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
+          if [ -d "$skill_dir" ]; then
+            skill_name=$(basename "$skill_dir")
+            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.cursor/skills/$skill_name"
+          fi
+        done
 
   zsh-plugins:
     desc: Pull ZSH plugins from brew
