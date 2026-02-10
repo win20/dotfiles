@@ -131,9 +131,10 @@
 
   // Claude Code
   "claudeCode.useCtrlEnterToSend": true,
-  "claudeCode.selectedModel": "default",
-  "claudeCode.useTerminal": true,
+  "claudeCode.selectedModel": "sonnet",
+  "claudeCode.useTerminal": false,
   "claudeCode.preferredLocation": "panel",
+  "claudeCode.respectGitIgnore": false,
   "editor.accessibilitySupport": "off",
   "gitlens.views.commits.files.layout": "list",
   "accessibility.signals.lineHasBreakpoint": {
