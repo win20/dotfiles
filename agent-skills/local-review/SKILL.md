@@ -48,7 +48,7 @@ Last N commits:
 - Use the current branch name from `git rev-parse --abbrev-ref HEAD`, replacing `/` with `-` in the filename.
 - Keep the output clear and structured. Avoid emojis.
 - Include relevant code snippets for context (3-7 lines showing the issue).
-- Reference specific `CLAUDE.md` files and quotes when applicable.
+- Reference specific `CLAUDE.md` or `AGENTS.md` files and quotes when applicable.
 
 ## Review Checklist
 
@@ -83,6 +83,7 @@ Last N commits:
 - console.log statements
 - Mutation patterns
 - Missing tests for new code
+- Code follows project guidelines
 
 ## Performance (MEDIUM)
 
