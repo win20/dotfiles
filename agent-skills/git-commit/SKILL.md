@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation.
+description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use whenever commiting changes to git.
 license: MIT
 allowed-tools: Bash
 ---
@@ -109,10 +109,12 @@ feat(tabs): add animation for message count badge (HAE-123)
 - One logical change per commit
 - Present tense: "add" not "added"
 - Imperative mood: "fix bug" not "fixes bug"
-- Reference issue with suffix: (HAE-111) - you can find this in branch name
+- Reference issue with suffix: (HAE-111)
+  - you can find this in branch name
+  - if it's not in the branch name, skip adding the ticket number
 - Keep description under 72 characters
 - Don't add explanations in the description, just concise summary of what was done
-- Use body for explanations of why and how the change was done if it isn't obvious
+- Use body for explanations of why and how the change was done if it isn't obvious, use `-` style bullet points
 - Just commit, don't push
 
 ## Git Safety Protocol
