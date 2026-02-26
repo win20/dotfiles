@@ -14,7 +14,9 @@ Orchestrate a local code review by collecting diffs and producing a structured r
 1. Determine scope from the user request: uncommitted, against main, or last N commits.
 2. Collect diffs with the git commands for the selected scope (see Diff Commands).
 3. Review only the modified files and changes in scope.
-4. Write the review markdown to `.agent.local/reviews/{dd-mm-yyyy}-{branch-name}.md`.
+4. Assess if the review will require significant fixes or is lengthy:
+   1. If yes, write the review to a markdown file `.agent.local/reviews/{dd-mm-yyyy}-{branch-name}.md`
+   2. Otherwise, just output your review in chat
 
 ## Scope Rules
 

@@ -30,5 +30,6 @@
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
   },
-  "promptSuggestionEnabled": false
+  "promptSuggestionEnabled": false,
+  "effortLevel": "medium"
 }
