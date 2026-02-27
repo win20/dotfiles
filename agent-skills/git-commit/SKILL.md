@@ -1,7 +1,6 @@
 ---
 name: git-commit
-description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use whenever commiting changes to git.
-license: MIT
+description: Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use whenever commiting changes to git.
 allowed-tools: Bash
 ---
 

@@ -105,39 +105,18 @@ tasks:
     status:
       - test "$(readlink {{.HOME_DIR}}/.codex/AGENTS.md)" = "{{.DOTFILES_DIR}}/home/.codex/AGENTS.md"
 
-  ln-claude-skills:
-    desc: Symlink Claude skills (individual skill folders)
+  sync-skills:
+    desc: Copy skills to Claude, Codex, and Cursor directories (replaces existing)
     cmds:
-      - mkdir -p {{.HOME_DIR}}/.claude/skills
+      - mkdir -p {{.HOME_DIR}}/.claude/skills {{.HOME_DIR}}/.codex/skills {{.HOME_DIR}}/.cursor/skills
       - |
         for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
           if [ -d "$skill_dir" ]; then
             skill_name=$(basename "$skill_dir")
-            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.claude/skills/$skill_name"
-          fi
-        done
-
-  ln-codex-skills:
-    desc: Symlink Codex skills (individual skill folders)
-    cmds:
-      - mkdir -p {{.HOME_DIR}}/.codex/skills
-      - |
-        for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
-          if [ -d "$skill_dir" ]; then
-            skill_name=$(basename "$skill_dir")
-            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.codex/skills/$skill_name"
-          fi
-        done
-
-  ln-cursor-skills:
-    desc: Symlink Cursor skills (individual skill folders)
-    cmds:
-      - mkdir -p {{.HOME_DIR}}/.cursor/skills
-      - |
-        for skill_dir in {{.DOTFILES_DIR}}/agent-skills/*/; do
-          if [ -d "$skill_dir" ]; then
-            skill_name=$(basename "$skill_dir")
-            ln -sfn "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "{{.HOME_DIR}}/.cursor/skills/$skill_name"
+            for dest in {{.HOME_DIR}}/.claude/skills {{.HOME_DIR}}/.codex/skills {{.HOME_DIR}}/.cursor/skills; do
+              rm -rf "$dest/$skill_name"
+              cp -r "{{.DOTFILES_DIR}}/agent-skills/$skill_name" "$dest/$skill_name"
+            done
           fi
         done
 
