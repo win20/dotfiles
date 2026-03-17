@@ -123,4 +123,4 @@ Create detailed steps with:
 - Missing tests
 - Performance bottlenecks
 
-**Remember**: A great plan is specific, actionable, and considers both the happy path and edge cases. The best plans enable confident, incremental implementation.
+**Remember**: A great plan is specific, actionable, and considers both the happy path and edge cases. The best plans enable confident, incremental implementation. This plan should be self-contained, a user should be able to implement the task start to finish with all the context and information provided within the plan.

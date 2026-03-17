@@ -108,10 +108,14 @@
   "symbols.hidesExplorerArrows": false,
   "diffEditor.renderSideBySide": false,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "git.confirmSync": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.graph.minimap.enabled": false,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
 
   // Language specific settings
   "[go]": {

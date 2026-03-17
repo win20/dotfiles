@@ -12,7 +12,13 @@
       "Bash(done)",
       "Bash(npx madge:*)",
       "Bash(grep:*)",
-      "Skill(expo-react-native)"
+      "Skill(expo-react-native)",
+      "Bash(task lint:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npm run format:*)",
+      "Bash(npm run lint)",
+      "Bash(task format:*)",
+      "Bash(task pr-ready:*)"
     ],
     "deny": [
       "Bash(curl:*)",
@@ -31,5 +37,6 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "promptSuggestionEnabled": false,
-  "effortLevel": "medium"
+  "skipDangerousModePermissionPrompt": true,
+  "model": "opus"
 }
