@@ -80,7 +80,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Set searchable dirs for fcd()
-SEARCHABLE_DIRS=(~/Developer/winbarua/ ~/Developer/haerd/)
+SEARCHABLE_DIRS=(~/repos/winbarua/ ~/Developer/haerd/)
 
 # ==== WORK SPECIFIC ====
 if [[ "$IS_WORK_LAPTOP" == "1" ]]; then
@@ -121,9 +121,9 @@ alias lll="eza --long"
 alias lla="eza --all"
 alias llt="eza --tree"
 alias v="nvim"
-alias repos="cd ~/Developer/repos/winbarua"
-alias dot="cd ~/Developer/repos/winbarua/dotfiles"
-alias cdr=". ~/Developer/repos/winbarua/dotfiles/scripts/cd_repo.sh"
+alias repos="cd ~/repos/winbarua"
+alias dot="cd ~/repos/winbarua/dotfiles"
+alias cdr=". ~/repos/winbarua/dotfiles/scripts/cd_repo.sh"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
@@ -134,7 +134,7 @@ alias gclean="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs
 alias lg="lazygit"
 alias zz="zellij"
 alias zn="zellij attach --create"
-alias zel="~/Developer/repos/dotfiles/scripts/zellij_sessionizer.sh"
+alias zel="~/repos/winbarua/dotfiles/scripts/zellij_sessionizer.sh"
 alias vconf="nvim ~/.config/nvim"
 alias zconf="nvim ~/.zshrc"
 

@@ -1,6 +1,5 @@
 " General Settings
 set scrolloff=10
-set relativenumber
 set showmode
 set showcmd
 set smartcase
